@@ -1,0 +1,40 @@
+header {
+	background-color: lightgray;
+ 	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	box-shadow: 0px 0px 6px #888888;
+}
+
+nav {
+	margin: 0 auto;
+	width: 960px;
+	padding: 5px;
+	overflow: auto;
+	font-family: "Helvetica";
+}
+
+header nav h1 {
+	float: left;
+	margin: 10px;
+	text-transform: uppercase;
+}
+
+header nav ul {
+	float: right;
+	margin: 10px;
+	list-style: none;
+	margin-top: 15px;
+}
+
+header nav a {
+	text-decoration: none;
+	color: gray;
+}
+
+header nav a:hover {
+	background-color: transparent;
+	color: white;
+}

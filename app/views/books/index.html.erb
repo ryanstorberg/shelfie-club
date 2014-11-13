@@ -1,0 +1,12 @@
+<div id="bookshelf">
+  <% @books.each do |book| %>
+    <div class='book'>
+      <a href=""><img src="<%= book.image_link %>"></a>
+    </div>
+  <% end %>
+
+  <%= form_tag(books_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
+    <%= submit_tag "Search", :name => nil %>
+  <% end %>
+</div>

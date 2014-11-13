@@ -1,0 +1,37 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// * {
+// 	border: 1px solid red;
+// }
+
+#bookshelf {
+	margin: auto;
+	text-align: justify;
+	max-width: 960px;
+	margin-top: 100px;
+}
+
+
+.book {
+	display: inline-block;
+	margin: 10px;
+}
+
+.book a {
+	background-color: transparent;
+}
+
+.book img {
+	box-shadow: 0px 0px 4px #888888;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	margin: 0;
+}
+
+.book img:hover {
+	box-shadow: 0px 0px 2px #888888;
+	transform: scale(1.025);
+	-webkit-transform: scale(1.025);
+}
