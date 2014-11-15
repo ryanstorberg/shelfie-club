@@ -1,12 +1,28 @@
-<div id="bookshelf">
-  <% @books.each do |book| %>
-    <div class='book'>
-      <a href=""><img src="<%= book.image_link %>"></a>
-    </div>
-  <% end %>
-
+<div class="book-search">
   <%= form_tag(books_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
     <%= submit_tag "Search", :name => nil %>
+  <% end %>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<div id="bookshelf">
+  <% @books.each do |book| %>
+    <div class='book'>
+      <%= form_for :read_book, url: read_books_path do |f| %>
+      	<a href=""><img src="<%= book.image_link %>"></a>
+      	<%= f.hidden_field :user_id, value: current_user.id %>
+		    <%= f.hidden_field :isbn, value: book.isbn %>
+        <%= f.hidden_field :title, value: book.title %>
+        <%= f.hidden_field :author, value: book.authors %>
+        <%= f.hidden_field :category, value: book.categories %>
+        <%= f.hidden_field :pages, value: book.page_count.to_i %>
+        <%= f.hidden_field :cover_image, value: book.image_link %>
+        <div class="action">
+	  	    <%= f.submit 'Add to read' %>
+        </div>
+     <% end %>   
+		</div>
   <% end %>
 </div>

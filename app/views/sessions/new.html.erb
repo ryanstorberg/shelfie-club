@@ -1,10 +1,10 @@
-<%= form_for(:session, url: sessions_path) do |f| %>
+<div class='portal-form'>
+  <%= form_for(:session, url: sessions_path) do |f| %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+    <%= f.text_field :email, placeholder: 'Email' %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <%= f.password_field :password, placeholder: 'Password' %>
 
-  <%= f.submit "Log in" %>
-<% end %>
+    <%= f.submit "Log in" %>
+  <% end %>
+</div>

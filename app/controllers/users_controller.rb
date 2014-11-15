@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @books = User.find_by(id: params[:id]).books
   end
 
   # GET /users/new
@@ -28,7 +29,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to new_session_path, notice: 'User was successfully created.' }
+        log_in(@user)
+        format.html { redirect_to user_path(current_user), notice: "Welcome #{current_user.username}! Start adding books that you\'ve read!" }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -62,6 +64,19 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def log_in(user)
+      session[:current_user_id] = user.id
+    end
+
+    def logged_in?
+      session[:current_user_id]
+    end
+
+    def current_user
+      User.find_by(id: session[:current_user_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])

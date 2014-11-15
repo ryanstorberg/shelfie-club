@@ -1,4 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="profile-header">
+  
+</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="kowledge-meter">
+  
+</div>
+
+<div class="profile-bookshelf">
+  <p id="notice"><%= notice %></p>
+  
+  <% @books.each do |book| %>
+    <div class="book">
+      <a href=""><img src="<%= book.cover_image %>"></a>
+    </div>
+  <% end %>
+  <div class="book">
+    <a href="<%= books_path %>" title="Add a book"><img src="<%= image_path("book.png") %>" alt=""></a>
+  </div>
+</div>

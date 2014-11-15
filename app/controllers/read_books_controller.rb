@@ -1,34 +1,18 @@
 class ReadBooksController < ApplicationController
   before_action :set_read_book, only: [:show, :edit, :update, :destroy]
 
-  # GET /read_books
-  # GET /read_books.json
-  def index
-    @read_books = ReadBook.all
-  end
-
-  # GET /read_books/1
-  # GET /read_books/1.json
-  def show
-  end
-
-  # GET /read_books/new
-  def new
-    @read_book = ReadBook.new
-  end
-
-  # GET /read_books/1/edit
-  def edit
-  end
-
-  # POST /read_books
-  # POST /read_books.json
   def create
-    @read_book = ReadBook.new(read_book_params)
+    book = Book.create(isbn: read_book_params[:isbn],
+                       title: read_book_params[:title],
+                       author: read_book_params[:author],
+                       category: read_book_params[:category],
+                       pages: read_book_params[:pages],
+                       cover_image: read_book_params[:cover_image])
+    @read_book = ReadBook.new(user_id: read_book_params[:user_id], book_id: book.id)
 
     respond_to do |format|
       if @read_book.save
-        format.html { redirect_to @read_book, notice: 'Read book was successfully created.' }
+        format.html { redirect_to books_path, notice: 'Book was added!' }
         format.json { render :show, status: :created, location: @read_book }
       else
         format.html { render :new }
@@ -37,8 +21,6 @@ class ReadBooksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /read_books/1
-  # PATCH/PUT /read_books/1.json
   def update
     respond_to do |format|
       if @read_book.update(read_book_params)
@@ -51,8 +33,6 @@ class ReadBooksController < ApplicationController
     end
   end
 
-  # DELETE /read_books/1
-  # DELETE /read_books/1.json
   def destroy
     @read_book.destroy
     respond_to do |format|
@@ -62,13 +42,11 @@ class ReadBooksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_read_book
       @read_book = ReadBook.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def read_book_params
-      params[:read_book]
+      params.require(:read_book).permit(:user_id, :isbn, :title, :author, :category, :pages, :cover_image)
     end
 end

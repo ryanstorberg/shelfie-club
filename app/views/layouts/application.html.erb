@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Paperworm</title>
+  <title>SHELFIE</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <header>
-  <nav>
-    <a href=""><h1>paperworm</h1></a>
-    <% if session[:current_user_id] %>
-      <ul>
-        <li><%= link_to 'Log out', session_path(session[:current_user_id]), method: 'delete' %></li>
-      </ul>
-    <% else %>
-      <ul>
-        <li><%= link_to 'Log in', new_session_path %></li>
-      </ul>
-    <% end %>
+    <nav>
+      <a href="/"><h1>shelfie</h1></a>
+      <% if logged_in? %>
+        <ul>
+          <li><%= link_to current_user.username, session_path(current_user), method: 'delete' %></li>
+        </ul>
+      <% else %>
+        <ul>
+          <li><%= link_to 'Log in', new_session_path %></li>
+        </ul>
+      <% end %>
     </nav>
   </header>
 
-<%= yield %>
+  <div class='container'>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

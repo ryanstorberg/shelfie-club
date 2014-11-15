@@ -1,11 +1,16 @@
+// * {
+// 	border: 1px solid black;
+// }
+
 header {
-	background-color: lightgray;
+	background-color: #384249;
  	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
 	width: 100%;
 	box-shadow: 0px 0px 6px #888888;
+	height: 50px;
 }
 
 nav {
@@ -31,10 +36,50 @@ header nav ul {
 
 header nav a {
 	text-decoration: none;
-	color: gray;
+	color: white;
 }
 
 header nav a:hover {
 	background-color: transparent;
 	color: white;
+}
+
+.container {
+	margin: 50px auto;
+	max-width: 960px;
+}
+
+.simple-form {
+	heigth: 25px;
+	width: 75px;
+	padding: 10px;
+	margin: 250px auto;
+	text-align: center;
+	a {
+		font-family: "Helvetica";
+		text-decoration: none;
+		color: #384249;
+	}
+}
+
+.portal-form {
+	height: 150px;
+	width: 200px;
+	margin: 250px auto;
+	text-align: center;
+	font-family: "Helvetica";
+	input {
+				height: 35px;
+				width: 180px;
+				padding-left: 13px;
+				border: none;
+				outline-style: none;
+				line-height: 20px;
+				border-radius: 5px;
+	}
+}
+
+.book-search {
+	margin-top: 100px;
+	text-align: center;
 }

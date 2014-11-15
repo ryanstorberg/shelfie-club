@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20141111024216) do
   enable_extension "plpgsql"
 
   create_table "books", force: true do |t|
-    t.integer  "isbn"
+    t.string   "isbn"
     t.string   "title"
     t.string   "author"
     t.string   "category"
