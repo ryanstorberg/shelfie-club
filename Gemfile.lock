@@ -134,7 +134,7 @@ DEPENDENCIES
   googlebooks
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip (~> 4.2)
+  paperclip
   pg
   rails (= 4.1.7)
   rails_12factor

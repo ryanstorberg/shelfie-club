@@ -14,7 +14,7 @@ gem 'spring',        group: :development
 gem 'bcrypt'
 gem 'googlebooks'
 gem 'rails_12factor'
-gem "paperclip", "~> 4.2"
+gem "paperclip"
 
 # Use unicorn as the app server
 # gem 'unicorn'
