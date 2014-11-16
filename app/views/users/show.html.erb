@@ -1,14 +1,14 @@
-<div class="profile-header">
-  
+<div id="profile-header">
+  <%= image_tag current_user.avatar.url(:medium) %>
+  <div id="profile-information">
+    <!-- <h2 id="profile-name"><%= current_user.username %></h2> -->
+    <%= link_to 'Log out', session_path(current_user), method: 'delete' %>
+  </div>
 </div>
 
-<div class="kowledge-meter">
-  
-</div>
+<div id="divider"></div>
 
 <div class="profile-bookshelf">
-  <p id="notice"><%= notice %></p>
-  
   <% @books.each do |book| %>
     <div class="book">
       <a href=""><img src="<%= book.cover_image %>"></a>

@@ -1,4 +1,4 @@
-<% if session[:current_user_id] %>
+<% if logged_in? %>
   <div class="simple-form">
     <%= link_to 'Profile', user_path(current_user) %>
   </div>

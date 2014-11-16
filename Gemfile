@@ -43,3 +43,4 @@ gem 'bcrypt'
 # gem 'debugger', group: [:development, :test]
 gem 'googlebooks'
 gem 'rails_12factor'
+gem "paperclip", "~> 4.2"

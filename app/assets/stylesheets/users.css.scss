@@ -1,15 +1,34 @@
-.profile-header {
+#profile-header {
 	height: 200px;
-	background-color: lightgray;
+	img {
+		display: inline-block;
+		border-radius: 100%;
+		margin: 10px 0 0 10px;
+	}
+	#profile-information {
+		display: inline-block;
+		height: 200px;
+		#profile-name {
+			margin: 0;
+			float: left;
+		}
+	}
 }
 
 .knowledge-meter {
 	height: 50px;
 }
 
+#divider {
+	margin: 0 0 25px 0;
+	background-color: lightgray;
+	height: 5px;
+}
+
 .profile-bookshelf {
-	background-color: #efefef;
+	// background-color: #efefef;
 	text-align: justify;
+	// border-top: 1px solid lightgray;
 }
 
 .plus-cover {
