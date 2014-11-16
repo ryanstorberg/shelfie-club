@@ -1,16 +1,21 @@
 #profile-header {
 	height: 200px;
+	position: relative;
 	img {
 		display: inline-block;
 		border-radius: 100%;
 		margin: 10px 0 0 10px;
+		// position: absolute;
 	}
 	#profile-information {
+		padding-left: 10px;
 		display: inline-block;
+		position: absolute;
+		width: 770px;
 		height: 200px;
 		#profile-name {
 			margin: 0;
-			float: left;
+			padding: 0;
 		}
 	}
 }
@@ -45,4 +50,8 @@
 		color: lightgray;
 		text-decoration: none;
 	}
+}
+
+#log-out-link {
+	text-align: center;
 }

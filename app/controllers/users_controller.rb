@@ -10,8 +10,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user  = User.find_by(id: params[:id])
-    @books = User.find_by(id: params[:id]).books
+    @user           = User.find_by(id: params[:id])
+    @books          = User.find_by(id: params[:id]).books
+    # @category_stats = @books.select(:category).uniq
   end
 
   # GET /users/new

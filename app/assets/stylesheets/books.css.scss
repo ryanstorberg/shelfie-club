@@ -5,7 +5,6 @@
 	margin-top: 40px;
 }
 
-
 .book {
 	display: inline-block;
 	margin: 10px;
@@ -21,6 +20,6 @@
 
 .book img:hover {
 	box-shadow: 0px 0px 2px #888888;
-	transform: scale(1.01);
-	-webkit-transform: scale(1.01);
+	transform: scale(1.025);
+	-webkit-transform: scale(1.025);
 }
