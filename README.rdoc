@@ -18,3 +18,7 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+
+# development:
+#   access_key_id: AKIAJAD7ZWPVRER37QRQ
+#   secret_access_key: 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
