@@ -15,7 +15,7 @@ gem 'spring',        group: :development
 gem 'bcrypt'
 gem 'googlebooks'
 gem 'rails_12factor'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip"
 gem 'aws-sdk'
 
 # Use unicorn as the app server
