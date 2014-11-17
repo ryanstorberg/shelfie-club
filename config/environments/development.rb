@@ -35,5 +35,12 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  Paperclip.options[:command_path] = "usr/local/bin/convert"
+  # Paperclip.options[:command_path] = "usr/local/bin/convert"
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'storberg-development'
+    }
+  }
 end
