@@ -15,7 +15,7 @@ gem 'spring',        group: :development
 gem 'bcrypt'
 gem 'googlebooks'
 gem 'rails_12factor'
-gem 'paperclip'
+gem 'paperclip', '4.0.0'
 gem 'aws-sdk'
 
 # Use unicorn as the app server
