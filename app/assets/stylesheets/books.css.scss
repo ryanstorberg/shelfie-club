@@ -9,17 +9,15 @@
 	display: inline-block;
 	margin: 10px;
 	text-align: center;
-}
-
-.book img {
-	box-shadow: 0px 0px 4px #888888;
-	transition: all .2s ease-in-out;
-	-webkit-transition: all .2s ease-in-out;
-	margin: 0;
-}
-
-.book img:hover {
-	box-shadow: 0px 0px 2px #888888;
-	transform: scale(1.025);
-	-webkit-transform: scale(1.025);
+	img {
+		box-shadow: 0px 0px 4px #888888;
+		transition: all .2s ease-in-out;
+		-webkit-transition: all .2s ease-in-out;
+		margin: 0;
+	}
+	img:hover {
+		box-shadow: 0px 0px 2px #888888;
+		transform: scale(1.025);
+		-webkit-transform: scale(1.025);
+	}
 }

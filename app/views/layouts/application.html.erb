@@ -9,21 +9,35 @@
 <body>
 
   <header>
-    <nav>
-      <a href="/"><h1>shelfie</h1></a>
-      <% if logged_in? %>
-        <ul>
-          <li id="user-menu">
-            <%= link_to image_tag(current_user.avatar.url(:thumb)), user_path(current_user) %>
-          </li>
-        </ul>
-      <% else %>
-        <ul>
-          <li id="log-in-link">
-            <%= link_to 'Log in', new_session_path %>
-          </li>
-        </ul>
-      <% end %>
+    <nav id="nav-main">
+      <nav id="nav-left">
+        <%= link_to root_path do %>
+          <h1>Shelfie</h1>
+        <% end %>
+      </nav>
+      <nav id="nav-right">
+        <% if logged_in? %>
+          <%= link_to user_path(current_user) do %>
+            <div id="user-menu">
+              <span><%= current_user.username %></span>
+              <%= image_tag(current_user.avatar.url(:thumb)) %>
+            </div>
+          <% end %>
+          <div id="user-menu-options">
+            <ul>
+              <li><%= link_to 'Profile', user_path(current_user) %></li>
+              <li>Settings</li>
+              <li><%= link_to 'Log out', session_path(current_user), method: 'delete' %></li>
+            </ul>
+          </div>
+        <% else %>
+          <ul>
+            <li id="log-in-link">
+              <%= link_to 'Log in', new_session_path %>
+            </li>
+          </ul>
+        <% end %>
+      </nav>
     </nav>
   </header>
 

@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-# $(document).ready ->
-# 	$("#user-menu").on "mouseover", ->
-# 		$(".user-menu-option").fadeToggle()
+$(document).ready ->
+	$("#user-menu-options").hide()
+	$("#user-menu").on "mouseover", ->
+		$("#user-menu-options").show()
