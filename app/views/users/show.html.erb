@@ -1,7 +1,7 @@
 <div id="profile-header">
   <%= image_tag current_user.avatar.url(:medium) %>
   <div id="profile-information">
-    <%= @user.username %>
+    <h1><%= @user.username %></h1>
     <p><%= @books.count %> books read</p>
     <p><%= @books.sum(:pages) %> pages read</p>
   </div>
@@ -19,5 +19,3 @@
     <a href="<%= books_path %>" title="Add a book"><img src="<%= image_path("book.png") %>" alt=""></a>
   </div>
 </div>
-
-<p id="log-out-link"><%= link_to 'Log out', session_path(current_user), method: 'delete' %></p>

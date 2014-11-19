@@ -1,9 +1,12 @@
 <% if logged_in? %>
-  <div class="simple-form">
-    <%= link_to 'Profile', user_path(current_user) %>
+  <div id="logged-home-container">
+
   </div>
 <% else %>
-  <div class='simple-form'>
-    <%= link_to 'Sign up', new_user_path %>
+  <div id="logged-out-home-container">
+    <div class="portal-form">
+      <span>Sign up</span>
+      <%= render 'users/form' %>
+    </div>
   </div>
 <% end %>

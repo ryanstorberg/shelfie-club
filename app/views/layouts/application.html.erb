@@ -17,25 +17,28 @@
       </nav>
       <nav id="nav-right">
         <% if logged_in? %>
-          <%= link_to user_path(current_user) do %>
-            <div id="user-menu">
+          <div id="user-menu">
+            <%= link_to user_path(current_user) do %>
               <span><%= current_user.username %></span>
               <%= image_tag(current_user.avatar.url(:thumb)) %>
-            </div>
-          <% end %>
-          <div id="user-menu-options">
-            <ul>
-              <li><%= link_to 'Profile', user_path(current_user) %></li>
-              <li>Settings</li>
-              <li><%= link_to 'Log out', session_path(current_user), method: 'delete' %></li>
-            </ul>
+            <% end %>
+              <ul class="user-menu-options">
+                <%= link_to user_path(current_user) do %>
+                  <li>Profile</li>
+                <% end %>
+                <%= link_to edit_user_path(current_user) do %>
+                  <li>Settings</li>
+                <% end %>
+                <%= link_to session_path(current_user), method: 'delete' do %>
+                  <li>Log out</li>
+                <% end %>
+              </ul>
           </div>
         <% else %>
-          <ul>
-            <li id="log-in-link">
-              <%= link_to 'Log in', new_session_path %>
-            </li>
-          </ul>
+          <div id="user-menu">
+            <span><%= link_to 'Log in', new_session_path %></span>
+            <%= render 'sessions/form' %>
+          </div>
         <% end %>
       </nav>
     </nav>
