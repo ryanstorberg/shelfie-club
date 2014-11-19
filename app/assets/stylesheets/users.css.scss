@@ -4,7 +4,7 @@
 	img {
 		display: inline-block;
 		border-radius: 100%;
-		margin: 10px 0 0 10px;
+		margin: 15px 0 0 10px;
 		// position: absolute;
 	}
 	#profile-information {
@@ -20,14 +20,10 @@
 	}
 }
 
-.knowledge-meter {
-	height: 50px;
-}
-
 #divider {
-	margin: 0 0 25px 0;
-	background-color: lightgray;
-	height: 5px;
+	margin: 10px 0 15px 0;
+	background-color: #2F2F2F;
+	height: 2px;
 }
 
 .profile-bookshelf {

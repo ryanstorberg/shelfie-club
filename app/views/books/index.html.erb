@@ -1,6 +1,7 @@
 <div class="book-search">
   <%= form_tag(books_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search books" %>
+    <br>
     <%= submit_tag "Search", :name => nil %>
   <% end %>
 </div>

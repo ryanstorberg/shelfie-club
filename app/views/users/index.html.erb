@@ -1,23 +1,23 @@
-<h1>Listing users</h1>
+<div class="book-search">
+  <%= form_tag(users_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search people" %>
+    <br>
+    <%= submit_tag "Search", :name => nil %>
+  <% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div id="bookshelf">
+  <% if @users != nil %>
+    <% if @users.class == Array %>
+      <% @users.each do |user| %>
+        <div class='user'>
+            <p><%= user.username %></p>
+            <p><%= user.books.count %></p>
+        </div>
+      <% end %>
+    <% else %>
+      <p><%= @users.username %></p>
+      <p><%= @users.books.count %></p>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+  <% end %>
+</div>

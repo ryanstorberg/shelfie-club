@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SHELFIE</title>
+  <title>Shelfie</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,12 +14,21 @@
         <%= link_to root_path do %>
           <h1>Shelfie</h1>
         <% end %>
+        <%= link_to root_path do %>
+          <h2>Home</h2>
+        <% end %>
+        <%= link_to books_path do %>
+          <h2>Books</h2>
+        <% end %>
+        <%= link_to users_path do %>
+          <h2>People</h2>
+        <% end %>
       </nav>
       <nav id="nav-right">
         <% if logged_in? %>
           <div id="user-menu">
             <%= link_to user_path(current_user) do %>
-              <span><%= current_user.username %></span>
+              <h2 id="navbar-username"><%= current_user.username %></h2>
               <%= image_tag(current_user.avatar.url(:thumb)) %>
             <% end %>
               <ul class="user-menu-options">
@@ -36,7 +45,9 @@
           </div>
         <% else %>
           <div id="user-menu">
-            <span><%= link_to 'Log in', new_session_path %></span>
+            <%= link_to new_session_path do %>
+              <h2>Log in</h2>
+            <% end %>
             <%= render 'sessions/form' %>
           </div>
         <% end %>

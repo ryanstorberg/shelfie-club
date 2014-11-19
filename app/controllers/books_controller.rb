@@ -2,9 +2,7 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @books = Book.all
     @books = GoogleBooks.search(params[:search], {:count => 25})
-    
   end
 
   # GET /books/1

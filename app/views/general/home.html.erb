@@ -1,9 +1,9 @@
 <% if logged_in? %>
-  <div id="logged-home-container">
+  <div id="container-logged-in">
 
   </div>
 <% else %>
-  <div id="logged-out-home-container">
+  <div id="container-logged-out">
     <div class="portal-form">
       <span>Sign up</span>
       <%= render 'users/form' %>
