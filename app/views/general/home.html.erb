@@ -5,8 +5,11 @@
 <% else %>
   <div id="container-logged-out">
     <div class="portal-form">
-      <span>Sign up</span>
-      <%= render 'users/form' %>
+      <%= link_to new_user_path do %>
+        <div class="portal-button">
+          <h2>Sign up</h2>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>

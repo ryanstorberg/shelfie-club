@@ -141,8 +141,17 @@ header nav a:hover {
 	margin: 250px auto;
 	text-align: center;
 	font-family: "Helvetica";
+	color: 
 	span {
 		font-size: .85em;
+	}
+	a {
+		text-decoration: none;
+	}
+	h2 {
+		display: inline-block;
+		font-size: 15px;
+		color: #2F2F2F;
 	}
 	input {
 		height: 35px;
