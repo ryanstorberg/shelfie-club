@@ -2,7 +2,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.find_by(username: params[:search])
+    if !params[:search].blank?
+      @users = User.where('username LIKE ?', "%#{params[:search]}%")
+    end
   end
 
   def show

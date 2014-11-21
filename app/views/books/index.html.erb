@@ -1,4 +1,4 @@
-<div class="book-search">
+<div id="search-bar">
   <%= form_tag(books_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search books" %>
     <br>
@@ -8,7 +8,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<div id="bookshelf">
+<div id="search-results">
   <% @books.each do |book| %>
     <% if !book.image_link.blank? %>
       <div class='book'>

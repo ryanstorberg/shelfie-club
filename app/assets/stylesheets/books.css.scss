@@ -1,39 +1,23 @@
-.book-search {
-	margin-top: 100px;
-	text-align: center;
-	input[type="text"] {
-		height: 25px;
-		width: 200px;
-		border: none;
-		border-bottom: 2px solid #2F2F2F;
-	}
-	input[type="submit"] {
-		border: none;
-		background-color: none;
-		margin: 8px 0 0 0;
-	}
-}
-
-#bookshelf {
-	margin: auto;
-	text-align: justify;
-	max-width: 960px;
-	margin-top: 40px;
-}
-
 .book {
 	display: inline-block;
 	margin: 10px;
 	text-align: center;
+
 	img {
 		box-shadow: 0px 0px 4px #888888;
 		transition: all .2s ease-in-out;
 		-webkit-transition: all .2s ease-in-out;
 		margin: 0;
 	}
+
 	img:hover {
 		box-shadow: 0px 0px 2px #888888;
 		transform: scale(1.025);
 		-webkit-transform: scale(1.025);
+	}
+
+	input[type=submit] {
+		height: auto;
+		width: auto;
 	}
 }

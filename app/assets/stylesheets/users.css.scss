@@ -1,19 +1,19 @@
 #profile-header {
-	height: 200px;
+	height: 210px;
 	position: relative;
 	font-family: "Helvetica";
 
 	img {
 		display: inline-block;
 		border-radius: 100%;
-		margin: 15px 0 0 10px;
+		margin: 15px 0 15px 10px;
 	}
 	#profile-information {
 		padding-left: 10px;
 		display: inline-block;
 		position: absolute;
-		width: 770px;
-		height: 200px;
+		width: 760px;
+		height: 210px;
 		#profile-name {
 			margin: 0;
 			padding: 0;
@@ -22,15 +22,13 @@
 }
 
 #divider {
-	margin: 10px 0 15px 0;
+	margin: 0 0 15px 0;
 	background-color: #374140;
 	height: 2px;
 }
 
 .profile-bookshelf {
-	// background-color: #efefef;
 	text-align: justify;
-	// border-top: 1px solid lightgray;
 }
 
 .plus-cover {
@@ -51,4 +49,13 @@
 
 #log-out-link {
 	text-align: center;
+}
+
+.user {
+	margin: 10px;
+	display: inline-block;
+
+	img {
+		border-radius: 100%;
+	}
 }

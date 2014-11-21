@@ -1,11 +1,15 @@
 <% if logged_in? %>
-  <div id="container-logged-in">
-
+  <div id='l-col'>
+  	<h3>Quotes</h3>
+  </div>
+  <div id='c-col'>
+  	<h3>Activity</h3>
+  </div>
+  <div id='r-col'>
+  	<h3>Events</h3>
   </div>
 <% else %>
-  <div id="container-logged-out">
-    <div id="sign-up-form">
-    	<%= render 'users/form' %>
-    </div>
-  </div>
+  <div id="sign-up-form">
+    <%= render 'users/form' %>
+   </div>
 <% end %>
