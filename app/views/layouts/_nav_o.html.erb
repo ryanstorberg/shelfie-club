@@ -1,0 +1,19 @@
+<nav>
+	<div id='nav-left'>
+		<h1>
+			<%= link_to 'Shelfie', root_path %>
+		</h1>
+	</div>
+
+	<div id='nav-right'>
+		<div id='nav-toggler'>
+			<%= link_to new_session_path do %>
+        <h2>Log in</h2>
+      <% end %>
+		</div>
+
+		<div id='toggled'>
+			<%= render 'sessions/form' %>
+		</div>
+	</div>
+</nav>

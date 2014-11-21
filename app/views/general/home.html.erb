@@ -4,12 +4,8 @@
   </div>
 <% else %>
   <div id="container-logged-out">
-    <div class="portal-form">
-      <%= link_to new_user_path do %>
-        <div class="portal-button">
-          <h2>Sign up</h2>
-        </div>
-      <% end %>
+    <div id="sign-up-form">
+    	<%= render 'users/form' %>
     </div>
   </div>
 <% end %>

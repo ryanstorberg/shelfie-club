@@ -1,0 +1,30 @@
+<nav>
+  <div id='nav-left'>
+    <h1>
+      <%= link_to 'Shelfie', root_path %>
+    </h1>
+    <ul>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'Books', books_path %></li>
+      <li><%= link_to 'People', users_path %></li>
+      <li><%= link_to 'Clubs', clubs_path %></li>
+    </ul>
+  </div>
+
+  <div id='nav-right'>
+    <div id='nav-toggler'>
+      <%= link_to user_path(current_user) do %>
+        <h2><%= current_user.username %></h2>
+        <%= image_tag(current_user.avatar.url(:thumb)) %>
+      <% end %>
+    </div>
+
+    <div id='toggled'>
+      <ul>
+        <li><%= link_to 'Profile', user_path(current_user) %></li>
+        <li><%= link_to 'Setting', edit_user_path(current_user) %></li>
+        <li><%= link_to 'Log out', session_path(current_user), method: 'delete' %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

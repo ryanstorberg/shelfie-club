@@ -1,64 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Shelfie</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Shelfie</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <header>
-    <nav id="nav-main">
-      <nav id="nav-left">
-        <%= link_to root_path do %>
-          <h1>Shelfie</h1>
-        <% end %>
-        <% if logged_in? %>
-          <%= link_to root_path do %>
-            <h2>Home</h2>
-          <% end %>
-          <%= link_to books_path do %>
-            <h2>Books</h2>
-          <% end %>
-          <%= link_to users_path do %>
-            <h2>People</h2>
-          <% end %>
-        <% end %>
-      </nav>
-      <nav id="nav-right">
-        <% if logged_in? %>
-          <div id="user-menu">
-            <%= link_to user_path(current_user) do %>
-              <h2 id="navbar-username"><%= current_user.username %></h2>
-              <%= image_tag(current_user.avatar.url(:thumb)) %>
-            <% end %>
-              <ul class="user-menu-options">
-                <%= link_to user_path(current_user) do %>
-                  <li>Profile</li>
-                <% end %>
-                <%= link_to edit_user_path(current_user) do %>
-                  <li>Settings</li>
-                <% end %>
-                <%= link_to session_path(current_user), method: 'delete' do %>
-                  <li>Log out</li>
-                <% end %>
-              </ul>
-          </div>
-        <% else %>
-          <div id="user-menu">
-            <%= link_to new_session_path do %>
-              <h2>Log in</h2>
-            <% end %>
-          </div>
-        <% end %>
-      </nav>
-    </nav>
-  </header>
+    <header>
+      <% if logged_in? %>
+        <%= render 'layouts/nav_i' %>
+      <% else %>
+        <%= render 'layouts/nav_o' %>
+      <% end %>
+    </header>
 
-  <div class='container'>
-    <%= yield %>
-  </div>
+    <div id="content">
+      <main>
+        <%= yield %>
+      </main>
+    </div>
 
-</body>
+  </body>
 </html>

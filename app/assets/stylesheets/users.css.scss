@@ -1,11 +1,12 @@
 #profile-header {
 	height: 200px;
 	position: relative;
+	font-family: "Helvetica";
+
 	img {
 		display: inline-block;
 		border-radius: 100%;
 		margin: 15px 0 0 10px;
-		// position: absolute;
 	}
 	#profile-information {
 		padding-left: 10px;
@@ -22,7 +23,7 @@
 
 #divider {
 	margin: 10px 0 15px 0;
-	background-color: #2F2F2F;
+	background-color: #374140;
 	height: 2px;
 }
 

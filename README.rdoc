@@ -22,3 +22,15 @@ Things you may want to cover:
 # development:
 #   access_key_id: AKIAJAD7ZWPVRER37QRQ
 #   secret_access_key: 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
+
+Pages:
+Home (logged out)
+Home (logged in)
+Books
+People
+Clubs
+Profile (logged out)
+Profile (logged in)
+Profile (logged in - other user's)
+Book
+Club

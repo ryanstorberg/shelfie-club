@@ -1,186 +1,142 @@
 header {
-	// background-image: image-url("green-texture.png");
-	background-color: #2F2F2F;
+	height: 60px;
+	width: 100%;
+	background-color: #374140;
+	box-shadow: 0px 0px 6px #888888;
  	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
-	width: 100%;
-	box-shadow: 0px 0px 6px #888888;
-	height: 50px;
 	z-index: 100;
-	#nav-main {
-		font-family: "Helvetica";
-		height: 50px;
-		margin: 0 auto;
+	font-family: "Helvetica";
+	
+	nav {
+		height: 60px;
 		width: 960px;
+		margin: 0 auto;
+
+		a {
+			color: white;
+			text-decoration: none;
+		}
+
 		#nav-left {
+			height: 60px;
 			width: 70%;
 			display: inline-block;
 			float: left;
+
 			h1 {
 				display: inline-block;
 				float: left;
-				margin: 10.5px 15px 0 10px;
+				margin: 12.5px 15px 12.5px 10px;
 				padding: 0;
-				font-size: 25px;
+				font-size: 30px;
+				font-weight: normal;
 			}
-			h2 {
-				display: inline-block;
-				font-size: 15px;
+
+			ul {
 				float: left;
-				margin: 16px 15px 0 15px;
 				padding: 0;
+				font-weight: normal;
+				list-style: none;
+				margin: 0;
+
+				li {
+					font-size: 15px;
+					display: inline-block;
+					margin: 21.5px 15px 21.5px 15px;
+				}
 			}
 		}
+
 		#nav-right {
-			display: inline-block;
+			height: 60px;
 			width: 30%;
-			#user-menu {
-				float: right;
-				height: 50px;
+			display: inline-block;
+			float: right;
+			position: relative;
+
+			#nav-toggler {
 				display: inline-block;
-				position: relative;
-				font-size: .85em;
-				span {
-					float: left;
-					display: inline-block;
-					margin: 17px 10px 0 0;
-					color: white;
-				}
+				float: right;
+				margin: 0 10px 0 0;
+
 				h2 {
-					display: inline-block;
-					font-size: 15px;
 					float: left;
-					margin: 16px 10px 0 0;
-					padding: 0;
-				}
-				#navbar-username {
+					display: inline-block;
+					margin: 21.5px 0 21.5px 0;
+					font-size: 15px;
 					font-weight: normal;
 				}
-				#logged-out-image {
-					float: right;
-					border-radius: 100%;
-					margin: 10px 10px 0 0;
-					background-color: lightgray;
-					height: 30px;
-					width: 30px;
-				}
+
 				img {
 					float: right;
 					border-radius: 100%;
-					margin: 10px 10px 0 0;
+					margin: 10px 0 10px 10px;
 				}
-				.user-menu-options {
-					margin: 0;
-					display: none;
-					position: absolute;
-					background-color: lightgray;
-					z-index: 100;
-					top: 50px;
-					right: 10px;
+			}
+
+			#toggled {
+				margin: 0;
+				display: none;
+				position: absolute;
+				background-color: lightgray;
+				z-index: 100;
+				top: 60px;
+				right: 10px;
+
+				ul {
+					padding: 0;
 					list-style: none;
-					padding: 5px;
+					margin: 0;
+
 					li {
-						padding: 10px;
+						font-size: 15px;
+						padding: 5px 10px;
 					}
+
 					li:hover {
 						background-color: gray;
 					}
 				}
 			}
-			#user-menu:hover .user-menu-options {
-				display: block;
-			}
 		}	
 	}
 }
 
-#log-in-link {
-	margin: 16px 10px 0 0;
-}
-
-header nav a {
-	margin: 0;
-	text-decoration: none;
-	color: white;
-}
-
-header nav a:hover {
-	background-color: transparent;
-	color: white;
-}
-
-.container {
-	margin: 50px auto;
-	max-width: 960px;
-}
-
-// #logged-out-home-container {
-// 	background-color: #2F2F2F;
-// 	width: 100%;
-// 	height: 100%;
-// }
-
-.simple-form {
-	heigth: 25px;
-	width: 75px;
-	padding: 10px;
-	margin: 250px auto;
-	text-align: center;
-	a {
-		font-family: "Helvetica";
-		text-decoration: none;
-		color: #384249;
+#content {
+	
+	main {
+		margin: 60px auto;
+		max-width: 960px;
 	}
 }
 
-.portal-form {
-	height: 150px;
-	width: 200px;
-	margin: 250px auto;
-	text-align: center;
-	font-family: "Helvetica";
-	color: 
-	span {
-		font-size: .85em;
-	}
-	a {
-		text-decoration: none;
-	}
-	h2 {
-		display: inline-block;
-		font-size: 15px;
-		color: #2F2F2F;
-	}
+form {
+	padding: 5px 0 5px 0;
+
 	input {
 		height: 35px;
 		width: 180px;
-		padding-left: 13px;
+		padding: 0 0 0 10px;
+		font-family: "Helvetica";
 		border: none;
-		outline-style: none;
 		line-height: 20px;
-		border-radius: 5px;
+		border-radius: 2px;
+		margin: 5px 10px;
+	}
+
+	input[type=submit] {
+		padding: 0;
+		width: 190px;
 	}
 }
 
-.book-search {
-	margin-top: 100px;
-	text-align: center;
-	input[type="text"] {
-		height: 25px;
-		width: 200px;
-		border: none;
-		border-bottom: 2px solid #2F2F2F;
-	}
-	input[type="submit"] {
-		border: none;
-		background-color: none;
-		margin: 8px 0 0 0;
-	}
+#sign-up-form {
+	width: 210px;
+	margin: 250px auto;
+	background-color: lightgray;
+	z-index: 100;
+	border-radius: 2px;
 }
-hr {
-	color: #2F2F2F;
-	background-color: #2F2F2F;
-}
-
