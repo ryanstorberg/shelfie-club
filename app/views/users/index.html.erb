@@ -12,9 +12,9 @@
   <% if @users != nil %>
     <% @users.each do |user| %>
       <div class='user'>
-        <%= image_tag user.avatar.url(:medium) %>
-        <p><%= user.username %></p>
-        <p><%= user.books.count %></p>
+        <%= link_to user_path(user) do %>
+          <%= image_tag user.avatar.url(:medium) %>
+        <% end %>
       </div>
     <% end %>
   <% end %>

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
+    @user = current_user
     if !params[:search].blank?
       @users = User.where('username LIKE ?', "%#{params[:search]}%")
     end

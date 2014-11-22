@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :books
   resources :read_books, only: [:create, :destroy]
   resources :clubs
+  resources :relationships
 end

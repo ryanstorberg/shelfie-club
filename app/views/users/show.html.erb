@@ -1,5 +1,5 @@
 <div id="profile-header">
-  <%= image_tag current_user.avatar.url(:large) %>
+  <%= image_tag @user.avatar.url(:large) %>
   <div id="profile-information">
     <h1><%= @user.username %></h1>
     <p><%= @books.count %> books read</p>
