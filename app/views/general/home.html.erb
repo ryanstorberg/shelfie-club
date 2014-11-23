@@ -4,8 +4,13 @@
   </div>
   <div id='c-col'>
   	<h3>Activity</h3>
-    <% current_user.following.each do |following| %>
-      <%= image_tag following.avatar.url(:medium) %>
+    <% current_user.following.each do  |user| %>
+      <% user.books.each do  |book| %>
+        <article class='following-new-read-book'>
+          <%= image_tag user.avatar.url(:medium) %>
+          <a href=""><img src="<%= book.cover_thumbnail %>"></a>
+        </article>
+      <% end %>
     <% end %>
   </div>
   <div id='r-col'>

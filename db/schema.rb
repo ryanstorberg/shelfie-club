@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 20141121035412) do
     t.string   "author"
     t.string   "category"
     t.integer  "pages"
-    t.string   "cover_image"
+    t.string   "cover_thumbnail"
+    t.string   "cover_small"
+    t.string   "cover_medium"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -46,6 +46,6 @@ class ReadBooksController < ApplicationController
     end
 
     def read_book_params
-      params.require(:read_book).permit(:isbn, :title, :author, :category, :pages, :cover_image)
+      params.require(:read_book).permit(:isbn, :title, :author, :category, :pages, :cover_thumbnail, :cover_small, :cover_medium)
     end
 end

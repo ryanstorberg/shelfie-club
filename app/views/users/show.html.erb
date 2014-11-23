@@ -2,18 +2,17 @@
   <%= image_tag @user.avatar.url(:large) %>
   <div id="profile-information">
     <h1><%= @user.username %></h1>
-    <p><%= @books.count %> books read</p>
-    <p><%= @books.sum(:pages) %> pages read</p>
+    <%= render 'relationships/stats' %>
     <%= render 'follow_form' if logged_in? %>
   </div>
 </div>
 
-<div id="divider"></div>
+<div id="book-nav-bar"></div>
 
 <div class="profile-bookshelf">
   <% @books.each do |book| %>
     <div class="book">
-      <a href=""><img src="<%= book.cover_image %>"></a>
+      <a href=""><img src="<%= book.cover_small %>"></a>
     </div>
   <% end %>
   <div class="book">
