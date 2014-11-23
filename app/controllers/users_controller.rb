@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @user = current_user
     if !params[:search].blank?
       @users = User.where('username LIKE ?', "%#{params[:search]}%")
     end
@@ -10,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user  = User.find_by(id: params[:id])
-    @books = User.find_by(id: params[:id]).books
+    @books = @user.books
   end
 
   def new
@@ -22,17 +21,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
+    if @user.save
         log_in(@user)
-        format.html { redirect_to user_path(current_user), notice: "Welcome #{current_user.username}! Start adding books that you\'ve read!" }
-        format.json { render :show, status: :created, location: @user }
+        redirect_to user_path(current_user)
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render 'new'
       end
-    end
   end
 
   def update
@@ -67,10 +61,6 @@ class UsersController < ApplicationController
 
     def current_user
       User.find_by(id: session[:current_user_id])
-    end
-
-    def set_user
-      @user = User.find(params[:id])
     end
 
     def user_params

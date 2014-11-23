@@ -4,6 +4,9 @@
   </div>
   <div id='c-col'>
   	<h3>Activity</h3>
+    <% current_user.following.each do |following| %>
+      <%= image_tag following.avatar.url(:medium) %>
+    <% end %>
   </div>
   <div id='r-col'>
   	<h3>Events</h3>

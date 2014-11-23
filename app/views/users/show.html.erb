@@ -4,6 +4,7 @@
     <h1><%= @user.username %></h1>
     <p><%= @books.count %> books read</p>
     <p><%= @books.sum(:pages) %> pages read</p>
+    <%= render 'follow_form' if logged_in? %>
   </div>
 </div>
 

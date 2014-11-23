@@ -8,4 +8,16 @@ class User < ActiveRecord::Base
   has_secure_password
   has_attached_file :avatar, :styles => { :large => "180x180#", :medium => "100x100#", :thumb => "40x40#" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+  def follow(other_user)
+    active_relationships.create(followed_id: other_user.id)
+  end
+
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def following?(other_user)
+    following.include?(other_user)
+  end
 end
