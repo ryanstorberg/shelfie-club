@@ -16,32 +16,33 @@ ActiveRecord::Schema.define(version: 20141121035412) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "books", force: true do |t|
+  create_table "books", force: :cascade do |t|
     t.string   "isbn"
     t.string   "title"
     t.string   "author"
     t.string   "category"
     t.integer  "pages"
-    t.string   "cover_thumbnail"
+    t.text     "description"
     t.string   "cover_small"
     t.string   "cover_medium"
+    t.string   "cover_large"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "clubs", force: true do |t|
+  create_table "clubs", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "read_books", force: true do |t|
+  create_table "readerships", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "book_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "relationships", force: true do |t|
+  create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
     t.datetime "created_at",  null: false
@@ -52,14 +53,22 @@ ActiveRecord::Schema.define(version: 20141121035412) do
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
-  create_table "users", force: true do |t|
-    t.string   "username"
+  create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
+    t.string   "username"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "date_of_birth"
+    t.string   "sex"
+    t.string   "location"
+    t.text     "about"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.boolean  "verified?"
+    t.boolean  "admin?"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -2,24 +2,20 @@
 <html>
   <head>
     <title>Shelfie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
 
-    <header>
-      <% if logged_in? %>
-        <%= render 'layouts/nav_i' %>
-      <% else %>
-        <%= render 'layouts/nav_o' %>
-      <% end %>
-    </header>
 
-    <main>
-      <div id='content'>
-        <%= yield %>
-      </div>
+    <% if logged_in? %>
+      <%= render 'layouts/nav' %>
+    <% end %>
+    
+    <main class="container">
+      <%= yield %>
     </main>
 
   </body>

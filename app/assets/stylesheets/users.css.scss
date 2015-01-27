@@ -1,34 +1,5 @@
-#profile-header {
-	height: 210px;
-	position: relative;
-	font-family: "Helvetica";
-
-	img {
-		display: inline-block;
-		border-radius: 100%;
-		margin: 15px 0 15px 10px;
-	}
-	#profile-information {
-		padding-left: 10px;
-		display: inline-block;
-		position: absolute;
-		width: 760px;
-		height: 210px;
-		#profile-name {
-			margin: 0;
-			padding: 0;
-		}
-	}
-}
-
-#book-nav-bar {
-	margin: 0 0 15px 0;
-	background-color: #374140;
-	height: 30px;
-}
-
-.profile-bookshelf {
-	text-align: justify;
+#knowledge-ratio {
+	margin: 15px 0 0 0;
 }
 
 .plus-cover {

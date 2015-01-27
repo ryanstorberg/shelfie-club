@@ -3,11 +3,20 @@ class User < ActiveRecord::Base
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-  has_many :read_books, dependent: :destroy
-  has_many :books, through: :read_books
+  has_many :readerships, dependent: :destroy
+  has_many :books, through: :readerships
   has_secure_password
-  has_attached_file :avatar, :styles => { :large => "180x180#", :medium => "100x100#", :thumb => "40x40#" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :avatar, :styles => { :small => "30x30#", :medium => "60x60#", :large => "180x180#" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+  def knowledge_ratio
+    total_pages = books.sum(:pages)
+    percentage  = {}
+    books.select(:category).distinct(:false).each do |book|
+      percentage[book.category] = ((books.where(category: book.category).sum(:pages) / total_pages.to_f) * 100).round(2)
+    end
+    percentage.sort_by{ |k, v| v }.reverse
+  end
 
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)

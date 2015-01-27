@@ -1,4 +1,43 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+	<div class="col-md-4">
+		<div class="row">
+			<div class="col-md-12">
+				<%= image_tag @book.cover_medium %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2><%= @book.title %></h2>
+				<p>ISBN: <%= @book.isbn %></p>
+				<p>Author: <%= @book.author %></p>
+				<p>Category: <%= @book.category %></p>
+				<p>Pages: <%= @book.pages %></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p><%= @book.description %></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-8">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="media-list">
+				  <li class="media">
+				    <a class="media-left" href="#">
+				      <img src="<%= current_user.avatar.url(:medium) %>" alt="...">
+				    </a>
+				    <div class="media-body">
+				      <h4 class="media-heading">Media heading</h4>
+				      <p>Something about something, and something about something. Something about something, and something about something. Something about something, and something about something. Something about something, and something about something.</p>
+				    </div>
+				  </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</div>

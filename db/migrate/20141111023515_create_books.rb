@@ -6,9 +6,10 @@ class CreateBooks < ActiveRecord::Migration
       t.string  :author
       t.string  :category
       t.integer :pages
-      t.string  :cover_thumbnail
+      t.text    :description
       t.string  :cover_small
       t.string  :cover_medium
+      t.string  :cover_large
       
       t.timestamps
     end

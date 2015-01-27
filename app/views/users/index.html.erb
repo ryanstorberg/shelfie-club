@@ -9,13 +9,5 @@
 <p id="notice"><%= notice %></p>
 
 <div id="search-results">
-  <% if @users != nil %>
-    <% @users.each do |user| %>
-      <div class='user'>
-        <%= link_to user_path(user) do %>
-          <%= image_tag user.avatar.url(:medium) %>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
+  
 </div>
