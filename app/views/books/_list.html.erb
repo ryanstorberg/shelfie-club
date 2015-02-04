@@ -3,7 +3,7 @@
     <% if !book.image_link.blank? %>
       <div class='book'>
         <%= form_for :readership, url: readerships_path, remote: true, html: { :class => 'new_read_book' } do |f| %>
-          <a href=""><img src="<%= book.image_link %>"></a>
+          <%= image_submit_tag(book.image_link) %>
           <%= f.hidden_field :user_id, value: current_user.id %>
           <%= f.hidden_field :isbn, value: book.isbn %>
           <%= f.hidden_field :title, value: book.title %>
@@ -14,9 +14,6 @@
           <%= f.hidden_field :cover_small, value: book.image_link(:zoom => 5) %>
           <%= f.hidden_field :cover_medium, value: book.image_link %>
           <%= f.hidden_field :cover_large, value: book.image_link(:zoom => 2) %>
-          <div class="action">
-            <%= f.submit 'Add to read' %>
-          </div>
        <% end %>   
       </div>
     <% end %>

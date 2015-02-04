@@ -13,6 +13,11 @@
 				<a href="" data-toggle="modal" data-target=".bs-example-modal-sm">Summary</a>
 			</div>
 		</div>
+    <% if current_user.books.include?(@book) %>
+      <%= form_for(current_user.books.find_by(isbn: @book.isbn), html: { method: :delete, id: "readership-toggle" }, remote: true) do |f| %>
+        <%= f.submit "Unread", class: "btn" %>
+      <% end %>
+    <% end %>
 	</div>
 	<div id="user-content" class="col-md-8">
 		<%= render "discussions/index" %>

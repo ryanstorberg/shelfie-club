@@ -1,5 +1,8 @@
+<h4>Log in</h4>
 <%= form_for(:session, url: sessions_path) do |f| %>
-	<%= f.text_field :email, placeholder: 'Email', autofocus: true %><br>
-	<%= f.password_field :password, placeholder: 'Password' %><br>
-	<%= f.submit "Log in" %>
+
+	<%= f.text_field :email, placeholder: 'Email', autofocus: true, class: "form-control" %><br>
+	<%= f.password_field :password, placeholder: 'Password', class: "form-control" %><br>
+	<%= f.submit "Log in", class: "btn btn-default" %>
+
 <% end %>

@@ -1,3 +1,4 @@
+<h4>Sign up</h4>
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,15 +12,16 @@
     </div>
   <% end %>
 
-  <%= f.text_field :username, placeholder: 'Username' %><br>
+  <%= f.text_field :username, placeholder: 'Username', class: "form-control" %><br>
 
-  <%= f.text_field :email, placeholder: 'Email' %><br>
+  <%= f.text_field :email, placeholder: 'Email', class: "form-control" %><br>
 
-  <%= f.password_field :password, placeholder: 'Password' %><br>
+  <%= f.password_field :password, placeholder: 'Password', class: "form-control" %><br>
 
   <%= f.file_field :avatar %>
+  <p class="help-block">Upload a profile image.</p>
 
   <div class="actions">
-    <%= f.submit 'Sign up' %>
+    <%= f.submit 'Sign up', class: "btn btn-default" %>
   </div>
 <% end %>
