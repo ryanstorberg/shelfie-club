@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   resources :readerships,   only: [:create, :destroy]
   resources :clubs
   resources :relationships, only: [:create, :destroy]
+  resources :discussions
+  resources :posts
+  resources :replies
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121035412) do
+ActiveRecord::Schema.define(version: 20150203012529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,22 @@ ActiveRecord::Schema.define(version: 20141121035412) do
     t.datetime "updated_at"
   end
 
+  create_table "discussions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.string   "opening"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "discussion_id"
+    t.integer  "user_id"
+    t.text     "content"
+  end
+
   create_table "readerships", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "book_id"
@@ -52,6 +68,14 @@ ActiveRecord::Schema.define(version: 20141121035412) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
+
+  create_table "replies", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.text     "content"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"

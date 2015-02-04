@@ -34,3 +34,7 @@ Profile (logged in)
 Profile (logged in - other user's)
 Book
 Club
+
+ <a href="<%= book_path(book) %>" class="book">
+        <img src="<%= book.cover_small %>">
+      </a>

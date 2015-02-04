@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :readerships, dependent: :destroy
   has_many :books, through: :readerships
+  has_many :discussions
+  has_many :posts
+  has_many :replies
   has_secure_password
   has_attached_file :avatar, :styles => { :small => "30x30#", :medium => "60x60#", :large => "180x180#" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/

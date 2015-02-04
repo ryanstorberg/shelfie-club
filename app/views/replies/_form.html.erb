@@ -1,0 +1,8 @@
+<div class="new-reply-form" class="row">
+  <%= form_tag(replies_path, :method => "post", remote: true, class: "reply-form") do %>
+    <input name="reply[user_id]" type="hidden" value=<%= current_user.id %>>
+    <input name="reply[post_id]" type="hidden" value=<%= post.id %>>
+    <textarea name="reply[content]" class="form-control" rows="3" placeholder="Reply"></textarea>
+    <button type="submit" class="btn btn-default">Post</button>
+  <% end %>
+</div>

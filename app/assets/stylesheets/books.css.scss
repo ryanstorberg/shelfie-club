@@ -4,14 +4,14 @@
 
 .book {
 	display: inline-block;
-	margin: 15px 0 0 0;
+	margin: 15px 5px 0 5px;
 	text-align: center;
+	vertical-align: bottom;
 
 	img {
 		box-shadow: 0px 0px 4px #888888;
 		transition: all .2s ease-in-out;
 		-webkit-transition: all .2s ease-in-out;
-		margin: 0;
 	}
 
 	img:hover {
@@ -26,14 +26,62 @@
 	}
 }
 
-// .search-header {
-// 	padding: 0;
+#search-results {
+	text-align: justify;
+	padding: 10px;
+}
+
+.media-body p {
+	min-height: 40px;
+	margin: 0;
+}
+
+.post-footer {
+	height: 20px;
+}
+
+.back-button:hover {
+	text-decoration: none;
+}
+
+.back-button p {
+	display: inline-block;
+}
+
+.discussion-content {
+	overflow: hidden;
+}
+
+.description-modal {
+	padding: 10px;
+}
+
+#title-heading {
+	margin-top: 0;
+}
+
+#book-info {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background-color: #f8f8f8;
+	border-radius: 4px;
+	// box-shadow: 0px 0px 4px #888888;
+	margin-left: 0;
+	border: 1px solid #e7e7e7;
+	// border-color: #e7e7e7;
+}
+
+#book-info-image {
+	box-shadow: 0px 0px 4px #888888;
+}
+
+// #book-info {
+// 	position: relative;
+
+// 	#isbn {
+// 		position: absolute;
+// 		bottom: 10px;
+// 		right: 10px;
+// 	}
 // }
 
-#search-form {
-	input {
-		border: none;
-		// height: 30px;
-		// padding: 0;
-	}
-}

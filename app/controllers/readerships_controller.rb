@@ -2,14 +2,16 @@ class ReadershipsController < ApplicationController
   before_action :set_readership, only: [:show, :edit, :update, :destroy]
 
   def create
-    book        = Book.create(readership_params)
+    book = Book.find_by(isbn: readership_params[:isbn])
+    unless book
+      book = Book.create(readership_params)
+    end
+    @user       = current_user
     @readership = Readership.new(user_id: user[:user_id], book_id: book.id)
 
     respond_to do |format|
       if @readership.save
-        # format.html { redirect_to books_path, notice: 'Book was added!' }
-        format.json { render :nothing => true }
-        # format.js { render :nothing => true }
+        format.js { render :new }
       else
         format.html { render :new }
         format.json { render json: @readership.errors, status: :unprocessable_entity }

@@ -1,0 +1,18 @@
+<div id="new-discussion-form" class="row">
+  <%= form_tag(posts_path, :method => "post", remote: true, id: "post-form") do %>
+    <input name="post[user_id]" type="hidden" value=<%= current_user.id %>>
+    <input name="post[discussion_id]" type="hidden" value=<%= discussion.id %>>
+    <textarea name="post[content]" class="form-control" rows="3" placeholder="Join discussion"></textarea>
+    <button type="submit" class="btn btn-default">Post</button>
+  <% end %>
+</div>
+
+<%= link_to book_path(discussion.book.id), :remote => true, class: "back-button" do %>
+  <p>Back to discussions</p>
+<% end %>
+
+<ul id="posts" class="media-list">
+  <% discussion.posts.reverse.each do |post| %>
+    <%= render "posts/post", post: post %>
+  <% end %>
+</ul>

@@ -1,43 +1,28 @@
 <div class="row">
-
 	<div class="col-md-4">
-		<div class="row">
-			<div class="col-md-12">
-				<%= image_tag @book.cover_medium %>
+		<div id="book-info" class="row">
+			<div class="col-md-5">
+				<%= image_tag @book.cover_medium, id: "book-info-image" %>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<h2><%= @book.title %></h2>
-				<p>ISBN: <%= @book.isbn %></p>
-				<p>Author: <%= @book.author %></p>
+			<div class="col-md-7">
+				<h2 id="title-heading"><%= @book.title %></h2>
+				<p>by <a href=""><%= @book.author %></a></p>
 				<p>Category: <%= @book.category %></p>
 				<p>Pages: <%= @book.pages %></p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<p><%= @book.description %></p>
+				<p id="isbn">ISBN: <%= @book.isbn %></p>
+				<a href="" data-toggle="modal" data-target=".bs-example-modal-sm">Summary</a>
 			</div>
 		</div>
 	</div>
-
-	<div class="col-md-8">
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="media-list">
-				  <li class="media">
-				    <a class="media-left" href="#">
-				      <img src="<%= current_user.avatar.url(:medium) %>" alt="...">
-				    </a>
-				    <div class="media-body">
-				      <h4 class="media-heading">Media heading</h4>
-				      <p>Something about something, and something about something. Something about something, and something about something. Something about something, and something about something. Something about something, and something about something.</p>
-				    </div>
-				  </li>
-				</ul>
-			</div>
-		</div>
+	<div id="user-content" class="col-md-8">
+		<%= render "discussions/index" %>
 	</div>
+</div>
 
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content description-modal">
+      <p><%= @book.description %></p>
+    </div>
+  </div>
 </div>

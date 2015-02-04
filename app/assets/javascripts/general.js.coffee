@@ -4,6 +4,10 @@ $(document).ready ->
 		$("#toggled").toggle()
 
 $(document).ready ->
-	$("#search-form input").keyup ->
+	$("#search-form").submit ->
+    	$.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script")
+    	return false;
+
+    $("#search-books-button").click ->
     	$.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script")
     	return false;

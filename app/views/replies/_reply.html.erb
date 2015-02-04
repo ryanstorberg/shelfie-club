@@ -1,0 +1,10 @@
+<li class="media">
+  <div class="media-left">
+    <a href="<%= user_path(reply.user.id) %>">
+      <img class="media-object" src="<%= reply.user.avatar.url(:medium) %>" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <p><%= reply.content %></p>
+  </div>
+</li>
