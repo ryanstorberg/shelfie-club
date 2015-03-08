@@ -13,9 +13,22 @@ main {
 }
 
 #intro-heading {
+	// font-family: 'Walter Turncoat', cursive;
+	font-family: 'Gentium Book Basic', serif;
 	text-align: center;
+	color: #64C08C;
+	font-size: 6em;
 }
 
 #intro-heading-row {
 	margin-bottom: 40px;
+}
+
+#intro-graphic {
+	text-align: center;
+}
+
+footer {
+	margin: 25px 0;
+	text-align: center;
 }
