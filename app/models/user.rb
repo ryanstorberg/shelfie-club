@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :small => "30x30#", :medium => "60x60#", :large => "180x180#" }, :default_url => "defaults/:style.jpg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
+  validates :email, :uniqueness => true
 
   def knowledge_ratio
     total_pages = books.sum(:pages)
