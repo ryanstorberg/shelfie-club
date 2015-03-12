@@ -3,14 +3,12 @@
   <head>
     <title>Leavs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-
 
     <% if logged_in? %>
       <%= render 'layouts/nav' %>
@@ -19,6 +17,10 @@
     <main class="container">
       <%= yield %>
     </main>
+
+    <footer id="sig-footer">
+      <p id="sig">Created by <a href="mailto:ryan@storberg.net">Ryan Storberg</a> in New York City</p>
+    </footer>
 
   </body>
 </html>

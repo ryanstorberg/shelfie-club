@@ -10,6 +10,11 @@
   <div class="col-md-6">
     
   </div>
+  <% if @user == current_user %>
+    <button type="button" class="btn btn-default btn-md" id="books-adder" data-toggle="modal" data-target="#myModal">
+      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add books
+    </button>
+  <% end %>
 </div>
 
 <div class="row">
@@ -22,11 +27,6 @@
 
 <div class="row">
   <div class="col-md-12" id="bookshelf">
-    <% if @user == current_user %>
-      <div class="book">
-        <a href="" title="Add a book" data-toggle="modal" data-target="#myModal"><img src="<%= image_path("book.png") %>" alt=""></a>
-      </div>
-    <% end %>
     <% @books.each do |book| %>
       <a href="<%= book_path(book) %>" class="book">
         <img src="<%= book.cover_small %>">
@@ -58,5 +58,4 @@
     </div>
   </div>
 </div>
-
-          
+  

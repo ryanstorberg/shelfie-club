@@ -1,7 +1,7 @@
 <li class="media">
   <div class="media-left">
     <a href="<%= user_path(post.user.id) %>">
-      <img class="media-object" src="<%= post.user.avatar.url(:medium) %>" alt="...">
+      <%= image_tag post.user.avatar.url(:medium), class: "img-rounded media-object" %>
     </a>
   </div>
   <div class="media-body">

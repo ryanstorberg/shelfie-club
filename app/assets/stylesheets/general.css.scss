@@ -1,3 +1,13 @@
+html {
+	background-color: #64C08C;
+}
+
+#nav-width-patch {
+	font-size: 3em;
+	color: #64C08C;
+	font-family: 'Gentium Book Basic', serif;
+}
+
 #general-search {
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -9,15 +19,15 @@
 }
 
 main {
-	margin-top: 68px;
+	padding-top: 68px;
 }
 
 #intro-heading {
-	// font-family: 'Walter Turncoat', cursive;
 	font-family: 'Gentium Book Basic', serif;
 	text-align: center;
 	color: #64C08C;
 	font-size: 6em;
+	margin: 0;
 }
 
 #intro-heading-row {
@@ -28,7 +38,29 @@ main {
 	text-align: center;
 }
 
-footer {
-	margin: 25px 0;
+.alert-list {
+	padding: 0;
+}
+
+.error {
+	list-style-type: none;
+	padding: 6px 12px;
+}
+
+#sig-footer {
+	height: 50px;
+	background-color: #64C08C;
+	padding: 15px 0;
+	margin-top: 50px;
+	width: 100%;
+}
+
+#sig {
 	text-align: center;
+	color: white;
+	margin: 0;
+	a {
+		color: white;
+		text-decoration: underline;
+	}
 }

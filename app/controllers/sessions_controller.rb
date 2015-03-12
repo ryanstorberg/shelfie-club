@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:current_user_id] = @user.id
       redirect_to user_path(@user)
     else
-      redirect_to new_session_path
+      render 'general/home'
     end
   end
 
