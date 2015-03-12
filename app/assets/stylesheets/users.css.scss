@@ -2,9 +2,23 @@
 	position: relative;
 }
 
+#profile-info {
+	display: inline-block;
+	margin: 0 0 0 15px;
+	h1 {
+		margin-top: 0;
+	}
+}
+
+.profile-img {
+	float: left;
+}
+
+#follow-form {
+	margin-top: 15px;
+}
+
 #books-adder {
-	// height: 25px;
-	// width: 25px;
 	position: absolute;
 	right: 15px;
 	bottom: 0;

@@ -7,4 +7,11 @@ class Book < ActiveRecord::Base
 
   # Validations
   validates :isbn, uniqueness: true
+
+  # Class Methods
+  def self.search(text)
+    GoogleBooks.search(text, {:count => 8}).select do |book|
+      !book.image_link.blank?
+    end
+  end
 end

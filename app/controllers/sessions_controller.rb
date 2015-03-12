@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-  def new
-  end
-
   def create
     @user = User.find_by_email(params[:session][:email])
 
@@ -9,7 +6,8 @@ class SessionsController < ApplicationController
       session[:current_user_id] = @user.id
       redirect_to user_path(@user)
     else
-      render 'general/home'
+      @user = User.new
+      redirect_to root_path, notice: "Email or password is incorrect"
     end
   end
 

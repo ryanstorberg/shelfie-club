@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
   def index
     if !params[:search].blank?
-      @books = GoogleBooks.search(params[:search], {:count => 25})
+      @books = Book.search(params[:search])
     end
   end
 

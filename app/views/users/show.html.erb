@@ -1,20 +1,17 @@
 <div class="row" id="profile-header">
-  <div class="col-md-2">
-    <%= image_tag @user.avatar.url(:large), class: "img-rounded" %>
+  <div class="col-md-12">
+    <%= image_tag @user.avatar.url(:large), class: "img-rounded profile-img" %>
+    <div id="profile-info">
+      <h1><%= @user.username %></h1>
+      <%= render 'relationships/stats' %>
+      <%= render 'follow_form' if logged_in? %>
+    </div>
+    <% if current_user?(@user) %>
+      <button type="button" class="btn btn-default btn-md" id="books-adder" data-toggle="modal" data-target="#myModal">
+        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add books
+      </button>
+    <% end %>
   </div>
-  <div class="col-md-4">
-    <h1><%= @user.username %></h1>
-    <%= render 'relationships/stats' %>
-    <%= render 'follow_form' if logged_in? %>
-  </div>
-  <div class="col-md-6">
-    
-  </div>
-  <% if @user == current_user %>
-    <button type="button" class="btn btn-default btn-md" id="books-adder" data-toggle="modal" data-target="#myModal">
-      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add books
-    </button>
-  <% end %>
 </div>
 
 <div class="row">
@@ -27,6 +24,12 @@
 
 <div class="row">
   <div class="col-md-12" id="bookshelf">
+    <% if flash.any? %>
+      <div class="alert alert-success alert-dismissible" id="alert-add-books" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        Welcome to Leavs! <a href="#" class="alert-link" data-toggle="modal" data-target="#myModal"><%= notice %></a> to get started!
+      </div>
+    <% end %>
     <% @books.each do |book| %>
       <a href="<%= book_path(book) %>" class="book">
         <img src="<%= book.cover_small %>">
@@ -50,7 +53,6 @@
 
           <% end %>
         </div>
-        <p id="notice"><%= notice %></p>
 
         <div id="search-results">
           

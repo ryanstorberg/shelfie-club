@@ -28,11 +28,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-        log_in(@user)
-        redirect_to user_path(current_user)
-      else
-        render 'general/home'
-      end
+      log_in(@user)
+      redirect_to user_path(current_user), notice: 'Add books'
+    else
+      render 'general/home'
+    end
   end
 
   def update
