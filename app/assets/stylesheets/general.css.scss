@@ -72,3 +72,9 @@ main {
 #alert-add-books {
 	margin-top: 50px;
 }
+
+#discussion textarea:focus, input[type]:focus {
+	border-color: #64C08C;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}

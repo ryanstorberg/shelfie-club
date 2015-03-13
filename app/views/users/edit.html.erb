@@ -1,6 +1,28 @@
-<h1>Editing user</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h4>Edit profile</h4>
+    <%= form_for(@user, method: "patch") do |f| %>
+      <% if @user.errors.any? %>
+        <ul class="alert-list">
+          <% @user.errors.full_messages.reverse.each do |message| %>
+            <li class="alert alert-danger error" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 
+              <%= message %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+      <%= f.text_field :username, placeholder: 'Name', class: "form-control" %><br>
+      <%= f.text_field :email, placeholder: 'Email', class: "form-control" %><br>
+      <%= f.password_field :password, placeholder: 'Password', class: "form-control" %><br>
+      <%= f.password_field :password_confirmation, placeholder: 'Password confirmation', class: "form-control" %><br>
+      <%= f.file_field :avatar %>
+      <p class="help-block">Change your profile image.</p>
+      <div class="actions">
+        <%= f.submit 'Save', class: "btn btn-default" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-4"></div>
+</div>

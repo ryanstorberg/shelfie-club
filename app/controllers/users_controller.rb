@@ -23,27 +23,25 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(current_user)
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
       log_in(@user)
-      redirect_to user_path(current_user), notice: 'Add books'
+      redirect_to @user, notice: 'Add books'
     else
       render 'general/home'
     end
   end
 
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      render :edit
     end
   end
 
@@ -70,6 +68,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:username, :email, :password, :avatar)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar)
     end
 end
