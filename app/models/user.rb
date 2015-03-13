@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  # Callbacks
   before_save :email_downcase
 
   # Associations
@@ -20,10 +21,6 @@ class User < ActiveRecord::Base
   validates :email, :uniqueness => true
 
   # Instance Methods
-  def email_downcase
-    self.email = self.email.downcase
-  end
-
   def knowledge_ratio
     total_pages = books.sum(:pages)
     percentage  = {}
@@ -44,4 +41,9 @@ class User < ActiveRecord::Base
   def following?(other_user)
     following.include?(other_user)
   end
+
+  private
+    def email_downcase
+      self.email = self.email.downcase
+    end
 end

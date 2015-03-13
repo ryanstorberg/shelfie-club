@@ -13,7 +13,8 @@
           <% end %>
         </ul>
       <% end %>
-      <%= f.text_field :username, placeholder: 'Name', class: "form-control" %><br>
+      <%= f.text_field :username, placeholder: 'Name', class: "form-control", id: "toggle-info" %>
+      <p class="help-block" id="form-info">Your name is displayed exactly as typed. It may contain uppercase letters and spaces.</p><br>
       <%= f.text_field :email, placeholder: 'Email', class: "form-control" %><br>
       <%= f.password_field :password, placeholder: 'Password', class: "form-control" %><br>
       <%= f.password_field :password_confirmation, placeholder: 'Password confirmation', class: "form-control" %><br>
