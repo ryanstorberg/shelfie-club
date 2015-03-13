@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
     total_pages = books.sum(:pages)
     percentage  = {}
     books.select(:category).distinct(:false).each do |book|
-      percentage[book.category] = ((books.where(category: book.category).sum(:pages) / total_pages.to_f) * 100).round(2)
+      percentage[book.category] = ((books.where(category: book.category).sum(:pages) / total_pages.to_f) * 100)
     end
     percentage.sort_by{ |k, v| v }.reverse
   end
