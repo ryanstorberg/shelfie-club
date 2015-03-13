@@ -42,22 +42,22 @@
   <div class="modal-dialog">
     <div class="modal-content modal-search">
       <div class="modal-header search-header">
-          <%= form_tag(books_path, :method => "get", id: "search-form") do %>
+        <%= form_tag(books_path, :method => "get", id: "search-form") do %>
+          <div class="input-group">
+            <input name="search" type="text" class="form-control" placeholder="Search books" autofocus>
+            <span class="input-group-btn">
+              <button id="search-books-button" class="btn btn-default" type="button">Go</button>
+            </span>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-body" id="search-results">
 
-              <div class="input-group">
-                <input name="search" type="text" class="form-control" placeholder="Search books" autofocus>
-                <span class="input-group-btn">
-                  <button id="search-books-button" class="btn btn-default" type="button">Go</button>
-                </span>
-              </div>
-
-          <% end %>
-        </div>
-
-        <div id="search-results">
-          
-        </div>
-    </div>
-  </div>
-</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div> <!-- modal-content -->
+  </div> <!-- modal-dialog -->
+</div> <!-- modal -->
   
