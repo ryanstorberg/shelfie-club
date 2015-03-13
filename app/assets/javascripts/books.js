@@ -9,3 +9,14 @@ $(document).on("click", ".post-reply-action", function(e) {
 	$(".new-reply-form").hide();
 	$(this).closest(".media-body").children(".new-reply-form").show();
 });
+
+$(document).on("ready", function() {
+	$('#myModal').on('shown.bs.modal', function () {
+    $('#search-books-input').focus();
+
+    $("#books-adder").on("click", function() {
+			$("#search-results").html('');
+			$("#search-books-input").val('');
+		})
+	})
+})

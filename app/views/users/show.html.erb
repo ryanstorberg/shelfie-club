@@ -44,7 +44,7 @@
       <div class="modal-header search-header">
         <%= form_tag(books_path, :method => "get", id: "search-form") do %>
           <div class="input-group">
-            <input name="search" type="text" class="form-control" placeholder="Search books" autofocus>
+            <input name="search" type="text" class="form-control" id="search-books-input" placeholder="Search books">
             <span class="input-group-btn">
               <button id="search-books-button" class="btn btn-default" type="button">Go</button>
             </span>
