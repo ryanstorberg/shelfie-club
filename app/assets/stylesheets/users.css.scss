@@ -2,6 +2,11 @@
 	position: relative;
 }
 
+.profile-img-xs {
+	margin: 0 auto;
+	display: inline-block;
+}
+
 #profile-info {
 	display: inline-block;
 	margin: 0 0 0 15px;
@@ -12,6 +17,14 @@
 
 .profile-img {
 	float: left;
+}
+
+#xs-profile {
+	text-align: center;
+}
+
+.profile-img-xs {
+	margin-left: auto;
 }
 
 #follow-form {
@@ -26,6 +39,17 @@
 
 #knowledge-ratio {
 	margin: 15px 0 0 0;
+}
+
+.progress-bar {
+	border-right: 1px solid white;
+}
+
+.user-book {
+	width: 102.938px;
+	img {
+		width: 100%;
+	}
 }
 
 .plus-cover {
