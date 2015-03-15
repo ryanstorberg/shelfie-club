@@ -1,4 +1,10 @@
 var ready = function() {
+	$("#signup-toggle").on("click", function(e) {
+		e.preventDefault();
+		$("#login-xs").hide();
+		$("#signup-xs").show();
+	})
+
 	var colors = [
 		"#64C08C",
 		"#6CC392",
@@ -36,6 +42,18 @@ var ready = function() {
 			$("#search-results").html('');
 			$("#search-books-input").val('');
 		})
+
+		$(document).on("ajax:success", ".new_read_book", function(e) {
+			e.preventDefault();
+
+			$(".progress-bar").each(function(i) {
+				$(this).css("background-color", colors[i]);
+			})
+
+			$(".progress-bar").last().css("border-right", "none");
+
+			$(this).hide();
+		});
 	})
 };
 

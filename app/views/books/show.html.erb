@@ -1,11 +1,16 @@
 <div class="row">
-	<div class="col-md-4">
-		<div id="book-info" class="row">
-			<div class="col-md-5">
+	<div class="col-xs-12 col-md-4">
+		<div class="row" id="book-info">
+			<div class="col-xs-4 col-sm-3 col-md-5">
 				<%= image_tag @book.cover_medium, id: "book-info-image" %>
+        <% if current_user.books.include?(@book) %>
+          <%= form_for(current_user.books.find_by(isbn: @book.isbn), html: { method: :delete, id: "readership-toggle" }, remote: true) do |f| %>
+            <%= f.submit "Unread", class: "btn" %>
+          <% end %>
+        <% end %>
 			</div>
-			<div class="col-md-7">
-				<h2 id="title-heading"><%= @book.title %></h2>
+			<div class="col-xs-8 col-sm-9 col-md-7">
+				<h3 id="title-heading"><%= @book.title %></h3>
 				<p>by <a href=""><%= @book.author %></a></p>
 				<p>Category: <%= @book.category %></p>
 				<p>Pages: <%= @book.pages %></p>
@@ -13,13 +18,8 @@
 				<a href="" data-toggle="modal" data-target=".bs-example-modal-sm">Summary</a>
 			</div>
 		</div>
-    <% if current_user.books.include?(@book) %>
-      <%= form_for(current_user.books.find_by(isbn: @book.isbn), html: { method: :delete, id: "readership-toggle" }, remote: true) do |f| %>
-        <%= f.submit "Unread", class: "btn" %>
-      <% end %>
-    <% end %>
 	</div>
-	<div id="user-content" class="col-md-8">
+	<div class="col-xs-12 col-md-8" id="user-content">
 		<%= render "discussions/index" %>
 	</div>
 </div>

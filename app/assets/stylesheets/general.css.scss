@@ -2,6 +2,20 @@ html {
 	background-color: #64C08C;
 }
 
+#signup-xs {
+	display: none;
+	margin-bottom: 25px;
+}
+
+#login-xs {
+	margin-bottom: 25px;
+	p {
+		position: absolute;
+		bottom: 22px;
+		left: 100px;
+	}
+}
+
 #nav-width-patch {
 	font-size: 3em;
 	color: #64C08C;
@@ -25,9 +39,14 @@ main {
 #intro-heading {
 	font-family: 'Gentium Book Basic', serif;
 	text-align: center;
-	color: #64C08C;
 	font-size: 6em;
 	margin: 0;
+	a {
+		color: #64C08C;
+	}
+	a:hover {
+		text-decoration: none;
+	}
 }
 
 #intro-heading-row {

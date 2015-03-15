@@ -1,19 +1,28 @@
 <div id="intro-heading-row" class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">
-    <h1 id="intro-heading">Leavs</h1>
+    <h1 id="intro-heading"><a href="<%= root_path %>">Leavs</a></h1>
   </div>
   <div class="col-md-4"></div>
 </div>
 <div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-4">
+  <div class="hidden-xs col-sm-1 col-md-2"></div>
+  <div class="hidden-xs col-sm-5 col-md-4">
     <%= render 'users/form' %>
   </div>
-  <div class="col-md-4">
+  <div class="hidden-xs col-sm-5 col-md-4">
     <%= render 'sessions/form' %>
   </div>
-  <div class="col-md-2"></div>
+  <div class="hidden-xs col-sm-1 col-md-2"></div>
+  <div class="col-xs-12 hidden-sm hidden-md hidden-lg" id="home-xs-forms">
+    <div id="login-xs">
+      <%= render 'sessions/form' %>
+      <p>Don't have an account? <a href="#" id="signup-toggle">Sign up!</a></p>
+    </div>
+    <div id="signup-xs">
+      <%= render 'users/form' %>
+    </div>
+  </div>
 </div>
 <div class="row">
   <div class="col-md-12" id="intro-graphic">
