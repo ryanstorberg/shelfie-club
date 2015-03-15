@@ -55,6 +55,17 @@ $screen-lg:                  1200px !default;
 
 .progress-bar {
 	border-right: 1px solid white;
+	display: inline-block;
+}
+
+.searched-book {
+	width: 28.8%;
+	form {
+		width: 100%;
+		input {
+			width: 100%;
+		}
+	}
 }
 
 .user-book {
@@ -65,18 +76,47 @@ $screen-lg:                  1200px !default;
 }
 
 @media (min-width: $screen-sm) and (max-width: $screen-md) {
+	.searched-book {
+		width: 22.7%;
+		form {
+			width: 100%;
+			input {
+				width: 100%;
+			}
+		}
+	}
+
 	.user-book {
 		width: 14.8%;
 	}
 }
 
 @media (min-width: $screen-md) and (max-width: $screen-lg) {
+	.searched-book {
+		width: 22.7%;
+		form {
+			width: 100%;
+			input {
+				width: 100%;
+			}
+		}
+	}
+
   .user-book {
 		width: 12.8%;
 	}
 }
 
 @media (min-width: $screen-lg) {
+	.searched-book {
+		width: 22.7%;
+		form {
+			width: 100%;
+			input {
+				width: 100%;
+			}
+		}
+	}
   .user-book {
 		width: 11.3%;
 	}

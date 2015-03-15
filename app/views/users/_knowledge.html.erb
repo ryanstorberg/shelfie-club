@@ -1,6 +1,8 @@
 <% @user.knowledge_ratio.each do |category, percentage| %>
   <div class="progress-bar" style="width: <%= percentage %>%; background-color: <%= random_hex %>">
-    <span class="sr-only"><%= category %></span>
+    <span class="sr-only">
+      <%= category %>
+    </span>
     <%= percentage.round %>% <%= category %>
   </div>
 <% end %>

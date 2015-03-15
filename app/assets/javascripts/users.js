@@ -46,6 +46,8 @@ var ready = function() {
 		$(document).on("ajax:success", ".new_read_book", function(e) {
 			e.preventDefault();
 
+			$("#alert-add-books").hide();
+
 			$(".progress-bar").each(function(i) {
 				$(this).css("background-color", colors[i]);
 			})
