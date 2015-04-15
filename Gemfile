@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.1'
 gem 'rails', '4.2.1'
 
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'pg'
 gem 'sass-rails'
 gem 'bootstrap-sass'
@@ -19,7 +20,7 @@ gem 'bcrypt'
 gem 'googlebooks'
 gem 'rails_12factor'
 gem "paperclip"
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 # gem 'foundation-rails'
 
