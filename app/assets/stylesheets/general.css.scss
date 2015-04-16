@@ -44,10 +44,15 @@ main {
 	margin: 0;
 	a {
 		color: #64C08C;
-	}
-	a:hover {
 		text-decoration: none;
 	}
+}
+
+#intro-sub-heading {
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	font-size: 1.5em;
+	color: #64C08C;
 }
 
 #intro-heading-row {
