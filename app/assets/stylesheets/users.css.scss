@@ -1,61 +1,53 @@
-// Extra small screen / phone
-$screen-xs:                  480px !default;
+$screen-xs: 480px !default;
+$screen-sm: 768px !default;
+$screen-md: 992px !default;
+$screen-lg: 1200px !default;
 
-// Small screen / tablet
-$screen-sm:                  768px !default;
-
-// Medium screen / desktop
-$screen-md:                  992px !default;
-
-// Large screen / wide desktop
-$screen-lg:                  1200px !default;
-
-#profile-header {
-	position: relative;
-}
-
-.profile-img-xs {
-	margin: 0 auto;
-	display: inline-block;
-}
-
-#profile-info {
-	display: inline-block;
-	margin: 0 0 0 15px;
+#profile-card {
+	text-align: center;
+	width: 100%;
+	margin-bottom: 18px;
 	h1 {
-		margin-top: 0;
+		font-size: 18px;
+		margin: 10px 0;
 	}
 }
 
-.profile-img {
-	float: left;
+.stats {
+	margin-bottom: 10px;
 }
 
-#xs-profile {
-	text-align: center;
-}
-
-.profile-img-xs {
-	margin-left: auto;
+.stat {
+	display: inline-block;
+	margin: 0 5px;
 }
 
 #follow-form {
 	margin-top: 15px;
 }
 
-#books-adder {
-	position: absolute;
-	right: 15px;
-	bottom: 0;
+#bookshelf {
+	float: right;
 }
 
-#knowledge-ratio {
-	margin: 15px 0 0 0;
-}
-
-.progress-bar {
-	border-right: 1px solid white;
-	display: inline-block;
+#tool-bar {
+	background-color: #f8f8f8;
+	border: 1px solid #e7e7e7;
+	padding: 8px 10px;
+	margin-bottom: 8px;
+	border-radius: 4px;
+	li {
+		display: inline-block;
+		a {
+			color: black;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	#stats {
+		float: right;
+	}
 }
 
 .searched-book {
@@ -72,53 +64,6 @@ $screen-lg:                  1200px !default;
 	width: 28.9%;
 	img {
 		width: 100%;
-	}
-}
-
-@media (min-width: $screen-sm) and (max-width: $screen-md) {
-	.searched-book {
-		width: 22.7%;
-		form {
-			width: 100%;
-			input {
-				width: 100%;
-			}
-		}
-	}
-
-	.user-book {
-		width: 14.8%;
-	}
-}
-
-@media (min-width: $screen-md) and (max-width: $screen-lg) {
-	.searched-book {
-		width: 22.7%;
-		form {
-			width: 100%;
-			input {
-				width: 100%;
-			}
-		}
-	}
-
-  .user-book {
-		width: 12.8%;
-	}
-}
-
-@media (min-width: $screen-lg) {
-	.searched-book {
-		width: 22.7%;
-		form {
-			width: 100%;
-			input {
-				width: 100%;
-			}
-		}
-	}
-  .user-book {
-		width: 11.3%;
 	}
 }
 
@@ -148,5 +93,71 @@ $screen-lg:                  1200px !default;
 
 	img {
 		border-radius: 100%;
+	}
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-md) {
+
+	.searched-book {
+		width: 22.7%;
+		form {
+			width: 100%;
+			input {
+				width: 100%;
+			}
+		}
+	}
+
+	.user-book {
+		width: 14.8%;
+	}
+}
+
+@media (min-width: $screen-md) and (max-width: $screen-lg) {
+
+	#profile-card {
+		width: 210px;
+	}
+
+	#bookshelf {
+		width: 760px;
+	}
+
+	.searched-book {
+		width: 22.7%;
+		form {
+			width: 100%;
+			input {
+				width: 100%;
+			}
+		}
+	}
+
+  .user-book {
+		width: 12.8%;
+	}
+}
+
+@media (min-width: $screen-lg) {
+
+	#profile-card {
+		width: 210px;
+	}
+
+	#bookshelf {
+		width: 960px;
+	}
+
+	.searched-book {
+		width: 22.7%;
+		form {
+			width: 100%;
+			input {
+				width: 100%;
+			}
+		}
+	}
+  .user-book {
+		width: 11.3%;
 	}
 }

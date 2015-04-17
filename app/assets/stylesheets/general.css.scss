@@ -16,11 +16,14 @@ html {
 	}
 }
 
+#universal-search input {
+	width: 300px;
+}
+
 #nav-width-patch {
 	font-size: 3em;
 	color: #64C08C;
 	font-family: 'Lato', sans-serif;
-	// padding: 17px 15px 13px 15px;
 }
 
 #general-search {

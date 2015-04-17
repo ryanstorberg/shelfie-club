@@ -1,45 +1,25 @@
-<div class="row" id="profile-header">
-  <!-- Large -->
-  <div class="hidden-xs col-sm-12">
+<div class="row">
+
+<!--************************
+    Profile Information
+*************************-->
+  <div id="profile-card" class="col-xs-12 col-md-2">
     <%= image_tag @user.avatar.url(:large), class: "img-rounded profile-img" %>
     <div id="profile-info">
       <h1><%= @user.username %></h1>
       <%= render 'relationships/stats' %>
       <%= render 'follow_form' if logged_in? %>
     </div>
-    <% if current_user?(@user) %>
-      <button type="button" class="btn btn-default btn-md" id="books-adder" data-toggle="modal" data-target="#myModal">
-        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add books
-      </button>
-    <% end %>
   </div>
 
-  <!-- Small -->
-  <div class="col-xs-12 hidden-sm hidden-md hidden-lg" id="xs-profile">
-    <%= image_tag @user.avatar.url(:large), class: "img-rounded profile-img-xs" %>
-    <div id="">
-      <h1><%= @user.username %></h1>
-      <%= render 'relationships/stats' %>
-      <%= render 'follow_form' if logged_in? %>
-    </div>
-    <% if current_user?(@user) %>
-      <button type="button" class="btn btn-default btn-md" id="books-adder" data-toggle="modal" data-target="#myModal">
-        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-      </button>
-    <% end %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-12">
-    <div class="progress" id="knowledge-ratio">
-      <%= render 'knowledge' %>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-12" id="bookshelf">
+<!--************************
+         Bookshelf
+*************************-->
+  <div id="bookshelf" class="col-xs-12 col-md-10">
+    <ul id="tool-bar">
+      <li><a href="#">Sort <span class="caret"></span></a></li>
+      <li id="stats"><a href="#" data-toggle="modal" data-target="#myModal">Stats</a></li>
+    </ul>
     <% if flash.any? %>
       <div class="alert alert-success alert-dismissible" id="alert-add-books" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
