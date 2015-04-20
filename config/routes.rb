@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'general#home'
+  root      'general#welcome'
+  get       'search', to: 'general#search'
   resources :users
   resources :sessions,      only: [:new, :create, :destroy]
   resources :books

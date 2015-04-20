@@ -1,12 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
-  def index
-    if !params[:search].blank?
-      @books = Book.search(params[:search])
-    end
-  end
-
   def show
     @book = Book.find(params[:id])
     respond_to do |format|

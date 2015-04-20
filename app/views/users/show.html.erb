@@ -1,8 +1,4 @@
 <div class="row">
-
-<!--************************
-    Profile Information
-*************************-->
   <div id="profile-card" class="col-xs-12 col-md-2">
     <%= image_tag @user.avatar.url(:large), class: "img-rounded profile-img" %>
     <div id="profile-info">
@@ -10,14 +6,27 @@
       <%= render 'relationships/stats' %>
       <%= render 'follow_form' if logged_in? %>
     </div>
+    <div id="reading-list">
+      <h1>Reading List</h1>
+      <% @readerships_reading.each do |readership| %>
+        <a href="<%= book_path(readership.book) %>" class="book user-book">
+          <img src="<%= readership.book.cover_small %>">
+        </a>
+      <% end %>
+      <a href="#"><p>More ...</p></a>
+    </div>
   </div>
-
-<!--************************
-         Bookshelf
-*************************-->
+    
+  
   <div id="bookshelf" class="col-xs-12 col-md-10">
+
     <ul id="tool-bar">
-      <li><a href="#">Sort <span class="caret"></span></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" id="current-user-menu" data-toggle="dropdown" role="button" aria-expanded="false">Sort <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Coming Soon!</a></li>
+        </ul>
+      </li>
       <li id="stats"><a href="#" data-toggle="modal" data-target="#myModal">Stats</a></li>
     </ul>
     <% if flash.any? %>
@@ -26,34 +35,11 @@
         Welcome to Shelfie! <a href="#" class="alert-link" data-toggle="modal" data-target="#myModal"><%= notice %></a> to get started!
       </div>
     <% end %>
-    <% @books.each do |book| %>
-      <a href="<%= book_path(book) %>" class="book user-book">
-        <img src="<%= book.cover_small %>">
+    <% @readerships_read.each do |readership| %>
+      <a href="<%= book_path(readership.book) %>" class="book user-book">
+        <img src="<%= readership.book.cover_small %>">
       </a>
     <% end %>
   </div>
 </div>
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content modal-search">
-      <div class="modal-header search-header">
-        <%= form_tag(books_path, :method => "get", id: "search-form") do %>
-          <div class="input-group">
-            <input name="search" type="text" class="form-control" id="search-books-input" placeholder="Search books">
-            <span class="input-group-btn">
-              <button id="search-books-button" class="btn btn-default" type="button">Go</button>
-            </span>
-          </div>
-        <% end %>
-      </div>
-      <div class="modal-body" id="search-results">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div> <!-- modal-content -->
-  </div> <!-- modal-dialog -->
-</div> <!-- modal -->
   

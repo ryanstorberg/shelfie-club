@@ -14,8 +14,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user  = User.find_by(id: params[:id])
-    @books = @user.books
+    @user                = User.find_by(id: params[:id])
+    @readerships_read    = Readership.where(user_id: @user.id, status: 'read')
+    @readerships_reading = Readership.where(user_id: @user.id, status: 'reading').limit(3)
   end
 
   def new

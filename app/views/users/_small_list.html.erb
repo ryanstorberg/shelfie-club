@@ -1,0 +1,15 @@
+<ul id="small-user-results">
+  <% if @users != nil %>
+	  <% @users.each do |user| %>
+	  	<li class="result">
+	  		<div class='user'>
+		      <%= link_to user_path(user) do %>
+		        <%= image_tag user.avatar.url(:medium), class: "img-rounded" %>
+		        <%= user.username %>
+		      <% end %>
+		    </div>
+	  	</li>
+	  <% end %>
+	<% end %>
+  <a href="#"><li id="more-link" class="more-link-users">More ...</li></a>
+</ul>

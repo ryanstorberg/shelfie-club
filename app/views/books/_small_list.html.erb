@@ -1,0 +1,60 @@
+<ul id="small-book-results">
+  <% if @books %>
+    <% @books.each do |book| %>
+      <li class="result">
+          <div class="search-book-first">
+            <%= image_tag(book.image_link) %>
+          </div>
+          <div class="search-book-middle">
+            <div>
+              <h1><%= book.title %></h1>
+              <h2><%= book.authors %></h2>
+              <h3><%= book.isbn %></h3>
+            </div>
+          </div>
+          <div class="search-book-last">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                Action <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu book-actions" role="menu">
+                <li>
+                  <%= form_for :readership, url: readerships_path, remote: true do |f| %>
+                    <%= f.hidden_field :status, value: "read" %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <%= f.hidden_field :isbn, value: book.isbn %>
+                    <%= f.hidden_field :title, value: book.title %>
+                    <%= f.hidden_field :author, value: book.authors %>
+                    <%= f.hidden_field :category, value: book.categories %>
+                    <%= f.hidden_field :pages, value: book.page_count.to_i %>
+                    <%= f.hidden_field :description, value: book.description %>
+                    <%= f.hidden_field :cover_small, value: book.image_link(:zoom => 5) %>
+                    <%= f.hidden_field :cover_medium, value: book.image_link %>
+                    <%= f.hidden_field :cover_large, value: book.image_link(:zoom => 2) %>
+                    <%= f.submit "Mark book as read" %>
+                  <% end %>  
+                </li>
+                <li>
+                  <%= form_for :readership, url: readerships_path, remote: true do |f| %>
+                    <%= f.hidden_field :status, value: "reading" %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <%= f.hidden_field :isbn, value: book.isbn %>
+                    <%= f.hidden_field :title, value: book.title %>
+                    <%= f.hidden_field :author, value: book.authors %>
+                    <%= f.hidden_field :category, value: book.categories %>
+                    <%= f.hidden_field :pages, value: book.page_count.to_i %>
+                    <%= f.hidden_field :description, value: book.description %>
+                    <%= f.hidden_field :cover_small, value: book.image_link(:zoom => 5) %>
+                    <%= f.hidden_field :cover_medium, value: book.image_link %>
+                    <%= f.hidden_field :cover_large, value: book.image_link(:zoom => 2) %>
+                    <%= f.submit "Add book to reading list" %>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </li>
+    <% end %>
+  <% end %>
+  <a href="#"><li id="more-link" class="more-link-books">More ...</li></a>
+</ul>

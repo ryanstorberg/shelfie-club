@@ -16,8 +16,144 @@ html {
 	}
 }
 
-#universal-search input {
-	width: 300px;
+#universal-search-container {
+	margin-right: 15px;
+}
+
+#universal-search {
+	padding: 0;
+	margin: 8px 0;
+	input {
+		border-top-left-radius: 4px;
+		border-bottom-left-radius: 4px;
+		width: 336px;
+	}
+	button {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
+#searchbar-dropdown {
+	display: none;
+	width: 100%;
+	padding-bottom: 0;
+	a {
+		text-decoration: none;
+	}
+	#more-link {
+		text-align: center;
+		height: 30px;
+		padding: 5px;
+		&:hover {
+			background-color: rgb(238, 238, 238);
+		}
+	}
+}
+
+#small-book-results {
+	list-style: none;
+	padding: 0;
+	.result {
+		margin: 5px;
+		height: 60px;
+		img {
+			height: 60px;
+		}
+	}
+}
+
+#small-user-results {
+	list-style: none;
+	padding: 0;
+	.result {
+		margin: 5px;
+		height: 60px;
+		img {
+			height: 60px;
+		}
+	}
+	display: none;
+}
+
+#small-list-book-add {
+	margin: 0;
+	font-size: .85em;
+	border-radius: 0;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+#small-list-tabs {
+	margin-top: 5px;
+}
+
+.new_read_book {
+	height: 60px;
+}
+
+.search-book-first {
+	display: inline-block;
+	width: 45px;
+	float: left;
+	overflow: hidden;
+}
+
+.search-book-middle {
+	display: inline-block;
+	width: 260px;
+	padding: 12px 10px 12px 5px;
+	float: left;
+	h1 {
+		margin: 0;
+		font-size: 1em;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	h2 {
+		margin: 0;
+		font-size: .80em;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	h3 {
+		margin: 0;
+		font-size: .65em;
+		color: gray;
+	}
+}
+
+.search-book-last {
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+	padding: 16px 0;
+	float: right;
+	button {
+		font-size: .70em;
+		width: 50px;
+		padding: 6px 0;
+	}
+	ul {
+		padding: 0;
+		li {
+			input[type=submit] {
+				float: left;
+				padding: 5px;
+				font-size: .70em;
+				width: 100%;
+				border: none;
+				background-color: transparent;
+				text-align: left;
+				&:hover {
+					background-color: rgb(238, 238, 238);
+				}
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+	}
 }
 
 #nav-width-patch {
@@ -37,7 +173,7 @@ html {
 }
 
 main {
-	padding-top: 68px;
+	padding-top: 80px;
 }
 
 #intro-heading {

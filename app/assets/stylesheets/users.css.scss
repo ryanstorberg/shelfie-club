@@ -6,7 +6,7 @@ $screen-lg: 1200px !default;
 #profile-card {
 	text-align: center;
 	width: 100%;
-	margin-bottom: 18px;
+	margin-bottom: 30px;
 	h1 {
 		font-size: 18px;
 		margin: 10px 0;
@@ -14,7 +14,7 @@ $screen-lg: 1200px !default;
 }
 
 .stats {
-	margin-bottom: 10px;
+
 }
 
 .stat {
@@ -34,19 +34,45 @@ $screen-lg: 1200px !default;
 	background-color: #f8f8f8;
 	border: 1px solid #e7e7e7;
 	padding: 8px 10px;
-	margin-bottom: 8px;
+	margin-bottom: 15px;
 	border-radius: 4px;
 	li {
 		display: inline-block;
 		a {
+			text-decoration: none;
 			color: black;
-			&:hover {
-				text-decoration: none;
-			}
 		}
 	}
 	#stats {
 		float: right;
+	}
+}
+
+#reading-list {
+	margin-top: 15px;
+	text-align: center;
+	background-color: #f8f8f8;
+	border: 1px solid #e7e7e7;
+	border-radius: 4px;
+	h1 {
+		margin-bottom: 0;
+	}
+	.book {
+		width: 100px;
+		img {
+			width: 100%;
+		}
+	}
+	a {
+		text-decoration: none;
+	}
+	p {
+		margin: 5px 0 0 0;
+		height: 30px;
+		padding: 5px;
+		&:hover {
+			background-color: rgb(238, 238, 238);
+		}
 	}
 }
 
@@ -85,15 +111,6 @@ $screen-lg: 1200px !default;
 
 #log-out-link {
 	text-align: center;
-}
-
-.user {
-	margin: 10px;
-	display: inline-block;
-
-	img {
-		border-radius: 100%;
-	}
 }
 
 @media (min-width: $screen-sm) and (max-width: $screen-md) {

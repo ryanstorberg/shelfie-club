@@ -1,0 +1,4 @@
+$('#small-book-results').remove();
+$("#searchbar-dropdown").append("<%= escape_javascript(render("books/small_list")) %>");
+$('#small-user-results').remove();
+$("#searchbar-dropdown").append("<%= escape_javascript(render("users/small_list")) %>");

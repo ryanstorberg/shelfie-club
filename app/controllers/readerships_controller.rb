@@ -2,12 +2,12 @@ class ReadershipsController < ApplicationController
   before_action :set_readership, only: [:show, :edit, :update, :destroy]
 
   def create
-    book = Book.find_by(isbn: readership_params[:isbn])
+    book = Book.find_by(isbn: book_params[:isbn])
     unless book
-      book = Book.create(readership_params)
+      book = Book.create(book_params)
     end
     @user       = current_user
-    @readership = Readership.new(user_id: user[:user_id], book_id: book.id)
+    @readership = Readership.new(user_id: @user.id, book_id: book.id, status: readership_params[:status])
 
     respond_to do |format|
       if @readership.save
@@ -48,7 +48,11 @@ class ReadershipsController < ApplicationController
       params.require(:readership).permit(:user_id)
     end
 
-    def readership_params
+    def book_params
       params.require(:readership).permit(:isbn, :title, :author, :category, :pages, :description, :cover_small, :cover_medium, :cover_large)
+    end
+
+    def readership_params
+      params.require(:readership).permit(:status)
     end
 end

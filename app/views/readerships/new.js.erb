@@ -1,2 +1,12 @@
-$("#bookshelf").append("<%= escape_javascript(render(:partial => 'show')) %>");
-$("#knowledge-ratio").html("<%= escape_javascript(render(:partial => 'users/knowledge')) %>");
+<% if @readership.status == 'read' %>
+	$("#bookshelf").append("<%= escape_javascript(render(:partial => 'show')) %>");
+<% else %>
+	$("#reading-list").append("<%= escape_javascript(render(:partial => 'show')) %>");
+<% end %>
+
+$("#searchbar-dropdown").prepend(
+	"<div id=\"small-list-book-add\" class=\"alert alert-success alert-dismissible\" role=\"alert\">" +
+    "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" +
+    "You've successfully added a book to your <%= @readership.status %> list!" +
+  "</div>"
+);

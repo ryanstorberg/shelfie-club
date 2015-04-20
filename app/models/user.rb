@@ -42,6 +42,14 @@ class User < ActiveRecord::Base
     following.include?(other_user)
   end
 
+  def self.search(text, search_size = nil)
+    if search_size == "small"
+      User.where('username ILIKE ?', "%#{text}%").limit(3)
+    else
+      User.where('username ILIKE ?', "%#{text}%")
+    end
+  end
+
   private
     def email_downcase
       self.email = self.email.downcase

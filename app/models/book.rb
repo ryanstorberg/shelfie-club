@@ -9,9 +9,15 @@ class Book < ActiveRecord::Base
   validates :isbn, uniqueness: true
 
   # Class Methods
-  def self.search(text)
-    GoogleBooks.search(text, {:count => 8}).select do |book|
-      !book.image_link.blank?
+  def self.search(text, search_size = nil)
+    if search_size == "small"
+      GoogleBooks.search(text, {:count => 3}).select do |book|
+        !book.image_link.blank? && !book.isbn.blank?
+      end
+    else
+      GoogleBooks.search(text).select do |book|
+        !book.image_link.blank? && !book.isbn.blank?
+      end
     end
   end
 end
